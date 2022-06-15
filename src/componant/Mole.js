@@ -12,10 +12,11 @@ function Mole(props) {
 
     return (
         <div>
-            <img style={{'width': '30vw'}}
+            <img style={{'width': '10vw'}}
             src={moleImg}
             onClick={props.handleClick} />
         </div>
     )
 }
+
 export default Mole
