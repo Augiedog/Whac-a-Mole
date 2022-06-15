@@ -12,8 +12,8 @@ function MoleContainer(props) {
     const display = () => {
         return (
             <>
-                <Mole />
-                <NoMole />
+                <Mole /><NoMole />
+                
             </>
         )
     }
