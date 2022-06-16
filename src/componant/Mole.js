@@ -5,7 +5,7 @@ function Mole(props) {
     useEffect(() => {
         let randSeconds = Math.ceil(Math.random() * 5000)
         let timer = setTimeout(() => {
-            props.setDisplayMole(false)
+            props.setdaMole(false)
         }, randSeconds)
         return () => clearTimeout(timer)
     })
@@ -14,7 +14,8 @@ function Mole(props) {
         <div>
             <img style={{'width': '10vw'}}
             src={moleImg}
-            onClick={props.handleClick} />
+            onClick={props.handleClick}
+            alt={'Whack-Me'} />
         </div>
     )
 }

@@ -1,11 +1,11 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import noMoleImg from '../img/molehill.png'
 
 function NoMole(props) {
     useEffect(() => {
         let randSeconds = Math.ceil(Math.random() * 5000)
         let timer = setTimeout(() => {
-            props.setDisplayMole(false)
+            props.setdaMole(true)
         }, randSeconds)
         return () => clearTimeout(timer)
     })
@@ -14,7 +14,8 @@ function NoMole(props) {
         <div>
             <img style={{'width': '10vw'}}
             src={noMoleImg}
-            onClick={props.handleClick} />
+            onClick={props.handleClick}
+            alt={'buried'} />
         </div>
     )
 }

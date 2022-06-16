@@ -9,11 +9,11 @@ function App() {
     let  hills = []
     for (let i = 0; i < 9; i++) {
       hills.push(
-        <MoleContainer setScore={setScore} />
+        <MoleContainer setScore={setScore} score={score} />
       )
     }
     return (
-      <div>{hills}</div>
+      <div className='wrapper'>{hills}</div>
     )
   }
 

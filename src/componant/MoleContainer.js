@@ -1,22 +1,27 @@
+import { useState, useEffect } from 'react'
 import Mole from './Mole'
 import NoMole from './EmptySlot'
 
+
 function MoleContainer(props) {
-    let [theMole, setTheMole] = useState(false)
+    let [daMole, setdaMole] = useState(true)
 
     // A handleClick function that will increment the score by 1 and immediately set the clicked-on mole to no longer display (we will pass this down only to Mole components)
     const handleClick = (e) => {
-        prop.setScore(props.score ++)
+        props.setScore(props.score ++)
         display(false)
     }
 
     // A ternary that will determine which child to render
-    const display = theMole ? <Mole setScore={props.setScore} toggle={setTheMole} handleClick={handleClick} /> : <NoMole toggle={setTheMole} />
-    }
+    const display = daMole ? <Mole setScore={props.setScore} toggle={setdaMole} handleClick={handleClick} /> : <NoMole toggle={setdaMole} />
+    
+    useEffect(() => {
+        console.log(daMole)
+    }, [daMole])
 
     return (
-        <div style={{'display': 'inline-block', 'width': '25vw'}}>
-            {display()}
+        <div className='mole-container'>
+            {display}
         </div>
     )
 }

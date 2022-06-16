@@ -13,8 +13,13 @@ code {
     monospace;
 }
 
-.mole-container {
+.wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+.mole-container {
+  flex: 0 30%;
+  height: 100px;
+  margin-bottom: 2%;
 }
