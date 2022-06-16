@@ -6,7 +6,7 @@ function NoMole(props) {
         let randSeconds = Math.ceil(Math.random() * 5000)
         let timer = setTimeout(() => {
             // problem here
-            props.setdaMole(true)
+            props.toggle(true)
         }, randSeconds)
         return () => clearTimeout(timer)
     })
