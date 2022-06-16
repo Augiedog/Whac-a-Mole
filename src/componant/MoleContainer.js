@@ -8,6 +8,7 @@ function MoleContainer(props) {
 
     // A handleClick function that will increment the score by 1 and immediately set the clicked-on mole to no longer display (we will pass this down only to Mole components)
     const handleClick = (e) => {
+        // problem here
         props.setScore(props.score ++)
         setdaMole(false)
     }
