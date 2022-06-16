@@ -4,12 +4,12 @@ import NoMole from './EmptySlot'
 
 
 function MoleContainer(props) {
-    let [daMole, setdaMole] = useState(true)
+    let [daMole, setdaMole] = useState(false)
 
     // A handleClick function that will increment the score by 1 and immediately set the clicked-on mole to no longer display (we will pass this down only to Mole components)
     const handleClick = (e) => {
         props.setScore(props.score ++)
-        display(false)
+        setdaMole(false)
     }
 
     // A ternary that will determine which child to render

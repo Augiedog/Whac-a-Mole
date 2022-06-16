@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import noMoleImg from '../img/molehill.png'
 
 function NoMole(props) {
     useEffect(() => {
         let randSeconds = Math.ceil(Math.random() * 5000)
         let timer = setTimeout(() => {
-            props.setdaMole(true)
+            props.display(true)
         }, randSeconds)
         return () => clearTimeout(timer)
     })
