@@ -5,7 +5,7 @@ function NoMole(props) {
     useEffect(() => {
         let randSeconds = Math.ceil(Math.random() * 5000)
         let timer = setTimeout(() => {
-            props.display(true)
+            props.daMole(true)
         }, randSeconds)
         return () => clearTimeout(timer)
     })

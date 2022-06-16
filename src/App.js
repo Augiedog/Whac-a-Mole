@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import MoleContainer from './componant/MoleContainer'
-
 
 function App() {
   let [score, setScore] = useState(0)
@@ -13,9 +12,13 @@ function App() {
       )
     }
     return (
-      <div className='wrapper'>{hills}</div>
+      <div className='hills'>{hills}</div>
     )
   }
+
+  useEffect(() => {
+    console.log(score)
+  },[score])
 
   return (
     <div className="App">

@@ -5,7 +5,7 @@ function Mole(props) {
     useEffect(() => {
         let randSeconds = Math.ceil(Math.random() * 5000)
         let timer = setTimeout(() => {
-            props.display(false)
+            props.daMole(false)
         }, randSeconds)
         return () => clearTimeout(timer)
     })

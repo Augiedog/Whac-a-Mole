@@ -15,13 +15,13 @@ code {
 h1, h3 {
   text-align: center;
 }
-.wrapper {
+.hills {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .mole-container {
-  flex: 0 30%;
+  flex: 0 33%;
   height: 100px;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
 }
