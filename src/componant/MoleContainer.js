@@ -13,7 +13,7 @@ function MoleContainer(props) {
     }
 
     // A ternary that will determine which child to render
-    const display = daMole ? <Mole setScore={props.setScore} toggle={setdaMole} handleClick={handleClick} /> : <NoMole toggle={setdaMole} />
+    const display = daMole ? <Mole toggle={setdaMole} handleClick={handleClick} /> : <NoMole toggle={setdaMole} />
     
     useEffect(() => {
         console.log(daMole)
