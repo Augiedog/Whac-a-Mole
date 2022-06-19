@@ -12,7 +12,7 @@ function NoMole(props) {
 
     return (
         <div>
-            <img style={{'width': '10vw'}}
+            <img 
             src={noMoleImg}
             onClick={props.handleClick}
             alt={'buried'} />
