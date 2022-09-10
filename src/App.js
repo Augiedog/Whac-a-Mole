@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Whack-a-Mole!</h1>
+      <h1>Whac-a-Mole!</h1>
       <h3>{score}</h3>
       {createMoleHill()}
     </div>
