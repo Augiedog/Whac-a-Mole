@@ -1,9 +1,10 @@
-# React-a-Mole
+# Whack-a-Mole
 
-In this activity, you will develop a React-based Whac-a-Mole game from scratch. You will use all of the concepts learned in this module.
+This Web App, was developed as a React-based Whac-a-Mole game.
+The game is really fun to [Play](http://mole-a-whack.herokuapp.com/)
+<sup>Hosting Provided thru Heroku</sup>
 
-You will:
-
-* Generate components dynamically.
-* Use state to track the score and mole status.
-* Utilize the useEffect hook to govern the mole (component) lifecycle.
+Some things I learned while making this:
+- Generate components dynamically.
+- Use state to track the score and mole status.
+- Utilize the useEffect hook to govern the mole (component) lifecycle.
