@@ -1,8 +1,9 @@
 # Whac-a-Mole
 
 This Web App, was developed as a React-based Whac-a-Mole game.
-The game is really ** Fun ** to [Play](http://mole-a-whack.herokuapp.com/) so there is a deployment.
+The game is really Fun to play so there is a deployment.
 <sub>Hosting Provided thru Heroku</sub>
+<p align="center">you can <a href="http://mole-a-whack.herokuapp.com/"><b>Play</b></a> the Game here</p>
 
 Some things I learned while making this:
 - Generate components dynamically.
