@@ -11,12 +11,11 @@ function Mole(props) {
     })
 
     return (
-        <div>
-            <img 
+        <img
             src={moleImg}
             onClick={props.handleClick}
             alt={'Whack-Me'} />
-        </div>
+
     )
 }
 

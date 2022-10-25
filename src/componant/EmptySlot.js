@@ -11,12 +11,10 @@ function NoMole(props) {
     })
 
     return (
-        <div>
-            <img 
+        <img
             src={noMoleImg}
             onClick={props.handleClick}
             alt={'buried'} />
-        </div>
     )
 }
 
