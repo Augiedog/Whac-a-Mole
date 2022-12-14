@@ -11,16 +11,15 @@ function MoleContainer(props) {
         props.setScore(props.score +1)
         setdaMole(false)
     }
-    // A function the will decrement the score by 5 and
+    // A function the will decrement the score by 3 and keep the empty hill displayed
     const handleBadClick = (e) => {
-        props.setScore(props.score - 5)
+        props.setScore(props.score -3)
         setdaMole(false)
     }
     // A ternary that will determine which child to render
     const display = daMole ? <Mole toggle={setdaMole} handleClick={handleClick} /> : <NoMole toggle={setdaMole} handleClick={handleBadClick}/>
     
     useEffect(() => {
-        console.log(daMole)
     }, [daMole])
 
     return (

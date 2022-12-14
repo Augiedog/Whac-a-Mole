@@ -19,7 +19,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(score)
   },[score])
 
   return (
