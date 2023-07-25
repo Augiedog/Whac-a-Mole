@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import MoleContainer from './componant/MoleContainer'
+import Timer from './component/Timer'
 import Clock from './componant/Clock'
 import './App.css'
 
