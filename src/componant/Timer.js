@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const Timer = () => {
     const [days, setDays] = useState(0);
     const [hours, setHours] = useState(0);
