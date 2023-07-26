@@ -1,26 +1,28 @@
 import { useEffect, useState } from 'react'
 import MoleContainer from './componant/MoleContainer'
 import Timer from './componant/Timer'
-import Clock from './componant/Clock'
+// import Clock from './componant/Clock'
 import './App.css'
 
 
 function App() {
   let [score, setScore] = useState(0)
-  let [timer, setTime] = useState(30)
+  let [timer, setTime] = useState('5')
+  let [finaleScore, setFinaleScore] = useState(false)
+  console.log(finaleScore, 'cuz')
 
-  const createTimer = ()  => {
-    let timer = []
-    timer.push(
-      <Clock timer={timer} setTime={setTime} />
+  const createTimer = () => {
+    let timeKeep = []
+    timeKeep.push(
+      <Timer timer={timer} setFinaleScore={setFinaleScore} />
     )
     return (
-      <div className='timer'>{timer}</div>
+      <div className='timer'>{timeKeep}</div>
     )
   }
 
   const createMoleHill = () => {
-    let  hills = []
+    let hills = []
     for (let i = 0; i < 9; i++) {
       hills.push(
         <MoleContainer key={i} setScore={setScore} score={score} />
@@ -32,13 +34,14 @@ function App() {
   }
 
   useEffect(() => {
-  },[score],[timer])
+  }, [score], [timer], [finaleScore])
 
   return (
     <div className="App">
       <h1>Whac-a-Mole!</h1>
-      <h3>{score} .... {timer}</h3>
       {createTimer()}
+      <h3>Score: {score}</h3>
+      {finaleScore}
       {createMoleHill()}
     </div>
   );
