@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
 import MoleContainer from './componant/MoleContainer'
 import Timer from './componant/Timer'
-// import Clock from './componant/Clock'
 import './App.css'
 
 
 function App() {
   let [score, setScore] = useState(0)
-  let [timer, setTime] = useState('5')
+  let [timer, setTime] = useState('30')
   let [finaleScore, setFinaleScore] = useState(false)
   console.log(finaleScore, 'cuz')
 
