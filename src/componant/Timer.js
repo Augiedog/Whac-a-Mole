@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 
 function Timer(props) {
-  let [display, setDisplay] = useState(props.timer);
+  let [display, displayProps] = useState(props.timer);
   
   useEffect(() => {
     if (display > 0) {
-      setTimeout(() => setDisplay(display - 1), 1000);
+      setTimeout(() => displayProps(display - 1), 1000);
     } else {
-      setDisplay('Time\'s up!!');
+      displayProps('Time\'s up!!');
       props.setTimeUp(true)
     }
   })
