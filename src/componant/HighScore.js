@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 
 function HighScore(props) {
     return (
