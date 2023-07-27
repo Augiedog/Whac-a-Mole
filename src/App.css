@@ -5,9 +5,28 @@ h1, h3 {
   font-size: xx-large;
   color: #DD403A;
 }
+p {
+  font-size: large;
+  color: #DD403A;
+}
+.scoreBoard {
+  display: flex;
+  justify-content: space-evenly;
+  /* border: 10px solid #3e4fb1; */
+}
+.timer {
+  display: flex;
+  align-items: center;
+  font-size: large;
+  /* color: #DD403A; */
+  /* border: 10px solid #d81d1d; */
+}
 .hills {
   display: flex;
   flex-wrap: wrap;
+  border: 10px solid #f7ea41;
+}
+.highScore {
   border: 10px solid #f7ea41;
 }
 .mole-container {

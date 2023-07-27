@@ -11,9 +11,9 @@ function MoleContainer(props) {
         props.setScore(props.score +1)
         setdaMole(false)
     }
-    // A function the will decrement the score by 3 and keep the empty hill displayed
+    // A function the will decrement the score by 1 and keep the empty hill displayed
     const handleBadClick = (e) => {
-        props.setScore(props.score -3)
+        props.setScore(props.score -1)
         setdaMole(false)
     }
     // A ternary that will determine which child to render
