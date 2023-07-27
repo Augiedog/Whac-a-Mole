@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   let [score, setScore] = useState(0)
-  let [timer, setTime] = useState('30')
+  let [timer] = useState('30')
   let [timeUp, setTimeUp] = useState(false)
 
   const scoreBoard = () => {
