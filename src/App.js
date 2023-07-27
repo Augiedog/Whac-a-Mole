@@ -7,13 +7,13 @@ import './App.css'
 function App() {
   let [score, setScore] = useState(0)
   let [timer, setTime] = useState('30')
-  let [finaleScore, setFinaleScore] = useState(false)
-  console.log(finaleScore, 'cuz')
+  let [timeUp, setTimeUp] = useState(false)
+  console.log(timeUp, 'Time UP')
 
   const createTimer = () => {
     let timeKeep = []
     timeKeep.push(
-      <Timer timer={timer} setFinaleScore={setFinaleScore} />
+      <Timer timer={timer} setTimeUp={setTimeUp} />
     )
     return (
       <div className='timer'>{timeKeep}</div>
@@ -33,7 +33,7 @@ function App() {
   }
 
   useEffect(() => {
-  }, [score], [timer], [finaleScore])
+  }, [score], [timer], [timeUp])
 
   return (
     <div className="App">
