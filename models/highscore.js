@@ -10,7 +10,7 @@ const highscoreSchema = new Schema({
         type: Number,
         required: true
     },
-    bio: String
+    date: Date
 },{
     toJSON: { virtuals: true }
 })
