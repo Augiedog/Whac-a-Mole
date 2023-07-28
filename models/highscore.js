@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-const highscore = new Schema({
+const highscoreSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -16,4 +16,4 @@ const highscore = new Schema({
 })
 
  
-module.exports = mongoose.model('highscore')
+module.exports = mongoose.model('HighScore', highscoreSchema)

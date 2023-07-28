@@ -1,4 +1,4 @@
-# Whac-a-Mole(draft)
+# Whac-a-Mole
 
 This Web App, was developed as a React-based Whac-a-Mole game.
 The game is really Fun to play so there is a deployment.

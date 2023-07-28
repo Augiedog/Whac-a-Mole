@@ -5,7 +5,7 @@ function Timer(props) {
   
   useEffect(() => {
     if (display > 0) {
-      setTimeout(() => setDisplay(display - 1), 1000);
+      setTimeout(() => [setDisplay(display - 1)], 1000);
     } else {
       setDisplay('Time\'s up!!');
       props.setTimeUp(true)

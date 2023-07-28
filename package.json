@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "nodemon",
+    "draft": "npm --prefix frontend run start",
+    "write": "npm --prefix frontend run build"
   },
   "author": "",
   "license": "ISC",
