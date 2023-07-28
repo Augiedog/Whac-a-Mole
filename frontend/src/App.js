@@ -3,11 +3,11 @@ import MoleContainer from './componant/MoleContainer'
 import Timer from './componant/Timer'
 import HighScore from './componant/HighScore'
 import './App.css'
-
+import Button from 'react-bootstrap/Button'
 
 function App() {
   let [score, setScore] = useState(0)
-  let [timer, setTime] = useState('30')
+  let [timer] = useState('30')
   let [timeUp, setTimeUp] = useState(false)
 
   const scoreBoard = () => {
@@ -36,14 +36,17 @@ function App() {
       )
     } else {
       return (
+        <>
         <HighScore score={score} />
+        <Button variant="success" size="lg" onClick={(e) => window.location.reload()} >Play Again??</Button>
+        </>
       )
     }
   }
 
   useEffect(() => {
   }, [score], [timer], [timeUp])
-
+console.log(timer, timeUp, 'i wonder')
   return (
     <div className="App">
       <h1>Whac-a-Mole!</h1>
