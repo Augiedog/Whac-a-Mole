@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 //  Controllers
 app.use(express.urlencoded({ extended: true }))
-// app.use('/highscore', require('./controllers/highscore'))
+app.use('/highscore', require('./controllers/highscore'))
 
 // db connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
