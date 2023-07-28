@@ -4,7 +4,10 @@ import Timer from './componant/Timer'
 import HighScore from './componant/HighScore'
 import './App.css'
 import Button from 'react-bootstrap/Button'
+<<<<<<< HEAD:src/App.js
 
+=======
+>>>>>>> draft:frontend/src/App.js
 
 function App() {
   let [score, setScore] = useState(0)
@@ -47,7 +50,7 @@ function App() {
 
   useEffect(() => {
   }, [score], [timer], [timeUp])
-
+console.log(timer, timeUp, 'i wonder')
   return (
     <div className="App">
       <h1>Whac-a-Mole!</h1>

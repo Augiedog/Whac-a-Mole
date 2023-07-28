@@ -24,7 +24,7 @@ p {
   border: 10px solid #f7ea41;
 }
 .highScore {
-  border: 10px solid #f7ea41;
+  border: 10px solid #DD403A;
 }
 .mole-container {
   flex: 3 33%;
@@ -33,7 +33,6 @@ p {
 img {
   width: 86%;
 }
-
 
 @media (min-width: 600px) {
   img {
