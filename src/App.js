@@ -3,6 +3,7 @@ import MoleContainer from './componant/MoleContainer'
 import Timer from './componant/Timer'
 import HighScore from './componant/HighScore'
 import './App.css'
+import Button from 'react-bootstrap/Button'
 
 
 function App() {
@@ -36,7 +37,10 @@ function App() {
       )
     } else {
       return (
+        <>
         <HighScore score={score} />
+        <Button variant="success" size="lg" onClick={(e) => window.location.reload()} >Play Again??</Button>
+        </>
       )
     }
   }
