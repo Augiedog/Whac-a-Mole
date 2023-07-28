@@ -6,6 +6,7 @@ const cors = require('cors')
 const path = require('path')
 const app = express()
 const mongoose = require('mongoose')
+const serverless = require('serverless-http')
 
 // Settings
 app.use(cors())
@@ -26,6 +27,8 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .catch(err => console.error(err));
 
 // Listen for Connection
-app.listen(process.env.PORT, () => {
-    console.log(`Ready to Whack ${process.env.PORT}`)
-})
+// app.listen(process.env.PORT, () => {
+//     console.log(`Ready to Whack ${process.env.PORT}`)
+// })
+
+module.exports.handler = serverless(app);
