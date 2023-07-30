@@ -1,12 +1,14 @@
 //  Configuration
 require('dotenv').config()
 const express = require('express')
+const router = express.Router();
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
 const app = express()
 const mongoose = require('mongoose')
 const serverless = require('serverless-http')
+const { Router } = require('express')
 
 // Settings
 app.use(cors())
@@ -27,8 +29,5 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .catch(err => console.error(err));
 
 // Listen for Connection
-// app.listen(process.env.PORT, () => {
-//     console.log(`Ready to Whack ${process.env.PORT}`)
-// })
-
+app.use('/highscore', router)
 module.exports.handler = serverless(app);
