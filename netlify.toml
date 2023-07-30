@@ -1,12 +1,4 @@
 [build]
-  command = 'npm run build'
+  command = 'npm run start'
   functions = "functions"
   publish = 'build'
-[functions]
-  external_node_modules = ["express"]
-  node_bundler = "esbuild"
-[[redirects]]
-  force = true
-  from = "/highscore/*"
-  status = 200
-  to = "/.netlify/functions/highscore/:splat"
