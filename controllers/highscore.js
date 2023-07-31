@@ -4,7 +4,10 @@ const HighScore = require('../models/highscore')
 // INDEX page
 router.get('/', (req, res) => {
   res.status(200).json({
-      message: 'highscore api'
+      message: 'highscore api',
+      name: 'name',
+      score: 'score',
+      date: 'date'
   })
 })
 

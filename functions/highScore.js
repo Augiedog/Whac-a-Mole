@@ -1,22 +1,10 @@
 exports.handler = async function(event, context) {
-  try {
-    const subject = event.queryStringParameters.name || 'World'
-    return {
+  return {
       statusCode: 200,
-      body: JSON.stringify({ message: `High Score Api!! ${subject}` }),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
-    }
-  } catch (error) {
-    return { statusCode: 500, body: error.toString() }
+      body: JSON.stringify({
+        name: 'ACB',
+        score: '37',
+        date: '11/14/1985'
+      })
   }
 }
-  
-
-// Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
-// const handler = async (event) => {
-  
-
-// module.exports = { handler }
-

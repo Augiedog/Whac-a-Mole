@@ -4,15 +4,29 @@ import Timer from './componant/Timer'
 import HighScore from './componant/HighScore'
 import './App.css'
 import Button from 'react-bootstrap/Button'
-<<<<<<< HEAD:src/App.js
-
-=======
->>>>>>> draft:frontend/src/App.js
+import axios from 'axios'
 
 function App() {
   let [score, setScore] = useState(0)
   let [timer] = useState('30')
   let [timeUp, setTimeUp] = useState(false)
+  let [error, setError] = useState(null)
+  let hsAPI = ".netlify/functions/highScore"
+  let [topScore, setTopScore] = useState()
+
+  useEffect(() => {
+    fetch(hsAPI).then(async res => {
+      try {
+        let results = await axios.get(hsAPI)
+        console.log(results.data)
+        // setTopScore(results.data)
+        // console.log(topScore)
+      } catch (error) {
+        setError(error)
+      }
+    })
+
+  }, [topScore])
 
   const scoreBoard = () => {
     let timeKeep = []
@@ -41,23 +55,27 @@ function App() {
     } else {
       return (
         <>
-        <HighScore score={score} />
-        <Button variant="success" size="lg" onClick={(e) => window.location.reload()} >Play Again??</Button>
+          <HighScore score={score} topScore={topScore} />
+          <Button variant="success" size="lg" onClick={(e) => window.location.reload()} >Play Again??</Button>
         </>
       )
     }
   }
 
   useEffect(() => {
-  }, [score], [timer], [timeUp])
-console.log(timer, timeUp, 'i wonder')
-  return (
-    <div className="App">
-      <h1>Whac-a-Mole!</h1>
-      {scoreBoard()}      
-      {createMoleHill()}
-    </div>
-  );
+  }, [score, timer, timeUp])
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else {
+    return (
+      <div className="App">
+        <h1>Whac-a-Mole!</h1>
+        {scoreBoard()}
+        {createMoleHill()}
+      </div>
+    )
+  }
 }
 
 export default App;

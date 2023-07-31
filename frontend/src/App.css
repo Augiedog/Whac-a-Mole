@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-h1, h3 {
+.body {
+  background-color: #b5da71;
+}
+.h1, .h3 {
   font-size: xx-large;
   color: #DD403A;
 }
