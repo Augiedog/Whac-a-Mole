@@ -9,7 +9,7 @@
     "dev": "netlify dev",
     "build": "node server.js",
     "draft": "npm --prefix frontend run start",
-    "write": "npm rm build && --prefix frontend run build"
+    "write": "npm --prefix frontend run build"
   },
   "author": "",
   "license": "ISC",

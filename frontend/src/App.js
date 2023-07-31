@@ -21,7 +21,7 @@ function App() {
         console.log(results.data, 'this is what I want in topScore')
         console.log(results)
         setTopScore(results.data)
-        console.log(topScore)
+        console.log(topScore, 'Goal')
       } catch (error) {
         setError(error)
       }
