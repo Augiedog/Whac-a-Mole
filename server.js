@@ -8,7 +8,6 @@ const path = require('path')
 const app = express()
 const mongoose = require('mongoose')
 const serverless = require('serverless-http')
-const { Router } = require('express')
 
 // Settings
 app.use(cors())
