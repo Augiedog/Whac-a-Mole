@@ -11,7 +11,7 @@ function App() {
   let [timer] = useState('30')
   let [timeUp, setTimeUp] = useState(false)
   let [error, setError] = useState(null)
-  let hsAPI = ".netlify/functions/highScore"
+  let hsAPI = ".netlify/functions/example"
   let [topScore, setTopScore] = useState()
 
   useEffect(() => {
@@ -20,14 +20,12 @@ function App() {
         let results = await axios.get(hsAPI)
         console.log(results.data, 'this is what I want in topScore')
         setTopScore(results.data)
-        console.log(topScore, 'This is where I want it Goal')
       } catch (error) {
         setError(error)
       }
     })
-
-  }, [])
-
+  }, [hsAPI, topScore])
+console.log(topScore, 'from api!!')
   const scoreBoard = () => {
     let timeKeep = []
     timeKeep.push(
@@ -55,7 +53,7 @@ function App() {
     } else {
       return (
         <>
-          <HighScore score={score} topScore={topScore} />
+          <HighScore score={score} topScore={topScore} error={error} />
           <Button variant="success" size="lg" onClick={(e) => window.location.reload()} >Play Again??</Button>
         </>
       )
@@ -66,9 +64,7 @@ function App() {
   }, [score, timer, timeUp])
 
   if (error) {
-    return <div>Error: {error.message}</div>;
-  } else {
-    return (
+     return (
       <div className="App">
         <h1>Whac-a-Mole!</h1>
         {scoreBoard()}

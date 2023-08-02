@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const HighScore = require('../models/highscore')
+// const HighScore = require('../models/highscore')
 
 // INDEX page
 router.get('/', (req, res) => {

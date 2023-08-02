@@ -9,12 +9,10 @@ const highscoreSchema = new Schema({
     score: {
         type: Number,
         required: true
-    },
-    date: Date,
-required: true
-},{
+    }
+}, {
     toJSON: { virtuals: true }
 })
 
- 
+
 module.exports = mongoose.model('HighScore', highscoreSchema)

@@ -28,5 +28,14 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .catch(err => console.error(err));
 
 // Listen for Connection
-app.use('/highscore', router)
-module.exports.handler = serverless(app);
+// serve Connection for nodemon env
+if (process.env.NODE_ENV === "nodemon") {
+    const PORT = process.env.PORT
+    app.listen(PORT, () => {
+        console.log(`Looking for a Whack at ${PORT}`);
+    });
+} else {
+    app.use('/highscore', router)
+    module.exports.handler = serverless(app);
+}
+

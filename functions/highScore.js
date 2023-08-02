@@ -1,10 +1,66 @@
-exports.handler = async function(event, context) {
-  return {
-      statusCode: 200,
-      body: JSON.stringify({
-        name: 'ACB',
-        score: '37',
-        date: '11/14/1985'
-      })
+const { MongoClient } = require("mongodb");
+const HighScore = require("../models/highscore")
+
+exports.handler = async (event, context) => {
+  try {
+    const client = new MongoClient(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    await client.connect();
+
+    const db = client.db("WHACK");
+    const collection = db.collection("HIGH_SCORE");
+
+    if (event.httpMethod === "GET") {
+      // Perform the MongoDB query here (e.g., find, findOne, etc.)
+      const data = await collection.find({}).toArray();
+
+      client.close();
+
+      return {
+        statusCode: 200,
+        body: JSON.stringify(HighScore.data),
+      };
+    } else if (event.httpMethod === "POST") {
+      const requestBody = JSON.parse(event.body);
+      // Perform any necessary validation on the requestBody
+      // before inserting it into the database.
+      try {
+        if (!req.body.name) {
+          // Default if one is not provided
+          req.body.name= "ACB"
+        }
+        if (!req.body.score) {
+          req.body.score = 0
+        }
+        await HighScore.create(req.body)
+        
+      } catch (error) {
+        console.log(error)
+      }
+
+      // Insert the data into the MongoDB collection.
+      const result = await collection.insertOne(requestBody);
+
+      client.close();
+
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: "Data inserted successfully!" }),
+      };
+    } else {
+      return {
+        statusCode: 405,
+        body: JSON.stringify({ message: "Method Not Allowed" }),
+      };
+    }
+  } catch (error) {
+    console.error("Error accessing MongoDB: ", error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Internal Server Error" }),
+    };
   }
-}
+};
