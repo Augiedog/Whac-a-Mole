@@ -9,6 +9,10 @@ const highscoreSchema = new Schema({
     score: {
         type: Number,
         required: true
+    },
+    date: {
+        type: Date,
+        required: true
     }
 }, {
     toJSON: { virtuals: true }
