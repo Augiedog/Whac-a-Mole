@@ -1,6 +1,8 @@
 
 function HighScore(props) {
     console.log(props, 'new Goal')
+    console.log(props.topscore, 'topscore object')
+    
     return (
         <div className="highScore">
          <h3>Game Over</h3>
@@ -9,10 +11,10 @@ function HighScore(props) {
     {/* A function that will show scores of last 30 days
     then displays a table with the scores from highest to lowest */}
 const TableFromObject = ({ data }) => {
-  const tableRows = Object.entries(data).map(([key, value]) => (
+  const tableRows = Object.entries(data).map(([key, name, score, date]) => (
     <tr key={key}>
-      <td>{key}</td>
-      <td>{value}</td>
+      <td>{name}</td>
+      <td>{score}</td>
     </tr>
   ));
 
