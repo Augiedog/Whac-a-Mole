@@ -19,8 +19,8 @@ function App() {
       try {
         let results = await axios.get(hsAPI)
         // const results = await res.json()
-        console.log(res.json(results.data), 'this is what I want in topScore')
-        setTopScore(res.jason(results.data))
+        console.log(results, 'this is what I want in topScore')
+        setTopScore(results.data)
       } catch (error) {
         setError(error)
       }
