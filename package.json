@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon",
-    "dev": "netlify dev",
+    "start": "netlify dev",
+    "del": "rm -r build",
     "build": "node server.js",
     "draft": "npm --prefix frontend run start",
     "write": "npm --prefix frontend run build"
