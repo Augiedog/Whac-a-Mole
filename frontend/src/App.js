@@ -1,37 +1,14 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import MoleContainer from './componant/MoleContainer'
 import Timer from './componant/Timer'
 import HighScore from './componant/HighScore'
 import './App.css'
 import Button from 'react-bootstrap/Button'
-import axios from 'axios'
 
 function App() {
   let [score, setScore] = useState(0)
-  let [timer] = useState('30')
+  let [timer] = useState('5')
   let [timeUp, setTimeUp] = useState(false)
-  let [error, setError] = useState("")
-  let hsAPI = "/.netlify/functions/example"
-  let [topScore, setTopScore] = useState()
-
-  const fetchData = useCallback(() => {
-    fetch(hsAPI).then(async res => {
-      try {
-        let results = await axios.get(hsAPI)
-        // const results = await res.json()
-        console.log(results, 'this is what I want in topScore')
-        setTopScore(results.data)
-      } catch (error) {
-        setError(error)
-      }
-    })
-    console.log(topScore, 'from api!!')
-    return (
-      { topScore }
-    )
-  })
-
-
 
   const scoreBoard = () => {
     let timeKeep = []
@@ -60,7 +37,7 @@ function App() {
     } else {
       return (
         <>
-          <HighScore score={score} topScore={topScore} error={error} />
+          <HighScore score={score} />
           <Button variant="success" size="lg" onClick={(e) => window.location.reload()} >Play Again??</Button>
         </>
       )
@@ -68,13 +45,8 @@ function App() {
   }
 
   useEffect(() => {
-    fetchData()
-  }, [fetchData])
-
-  useEffect(() => {
   }, [score, timer, timeUp])
 
-  if (error) {
     return (
       <div className="App">
         <h1>Whac-a-Mole!</h1>
@@ -82,7 +54,6 @@ function App() {
         {createMoleHill()}
       </div>
     )
-  }
 }
 
 export default App;
