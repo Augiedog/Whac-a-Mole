@@ -6,6 +6,25 @@ function HighScore(props) {
     let [topScore, setTopScore] = useState()
     let [error, setError] = useState(null)
 
+    const HighScoreTable = ( topScore ) => {
+        const tableRows = Object.entries(topScore).map(([key, name, score]) => (
+            <tr key={key}>
+                <td>{name}</td>
+                <td>{score}</td>
+            </tr>
+        ));
+
+        return (
+            <div className="highScoreTable">
+                <table>
+                    <tbody>
+                        {tableRows}
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
+
     const fetchData = useCallback(() => {
         fetch(hsAPI).then(async res => {
             try {
@@ -17,34 +36,15 @@ function HighScore(props) {
         }) 
         console.log(topScore, 'var=topScore')   
         return (
-            {topScore}
+            HighScoreTable()
         )  
     })
 
-    // const HighScoreTableFromObject = ({ topScore }) => {
-    //     const tableRows = Object.entries(topScore).map(([key, name, score, date]) => (
-    //         <tr key={key}>
-    //             <td>{name}</td>
-    //             <td>{score}</td>
-    //         </tr>
-    //     ));
-
-    //     return (
-    //         <div className="highScoreTable">
-    //             <table>
-    //                 <tbody>
-    //                     {tableRows}
-    //                 </tbody>
-    //             </table>
-    //         </div>
-    //     )
-    // }
-
     useEffect(() => (
         fetchData()
-    ), [fetchData])
+    ), [HighScoreTable] )
 
-console.log(error, 'here is the error')
+    console.log(error, 'here is the error')
     return (
         <div className="highScore">
             <h3>Game Over</h3>
@@ -52,5 +52,12 @@ console.log(error, 'here is the error')
         </div>
     )
 }
+
+// db connection
+// const mongoose = require('mongoose')
+// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+//     .then(() => console.log('DB connected'))
+//     .catch(err => console.error(err));
+
 
 export default HighScore

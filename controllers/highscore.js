@@ -1,15 +1,15 @@
-const router = require('express').Router()
-// const HighScore = require('../models/highscore')
+// const router = require('express').Router()
+// // const HighScore = require('../models/highscore')
 
-// INDEX page
-router.get('/', (req, res) => {
-  res.status(200).json({
-      message: 'highscore api',
-      name: 'name',
-      score: 'score',
-      date: 'date'
-  })
-})
+// // INDEX page
+// router.get('/', (req, res) => {
+//   res.status(200).json({
+//       message: 'highscore api',
+//       name: 'name',
+//       score: 'score',
+//       date: 'date'
+//   })
+// })
 
 // router.get('/highscore', async (req, res) => {
 //   try {
@@ -121,4 +121,4 @@ router.get('/', (req, res) => {
 //   }
 // })
 
-module.exports = router
+// module.exports = router
