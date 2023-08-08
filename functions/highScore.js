@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const HighScore = require("../models/highscore")
+// const HighScore = require("../models/highscore")
 
 exports.handler = async (event, context) => {
   try {
@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
 
       return {
         statusCode: 200,
-        body: JSON.stringify(HighScore.data),
+        body: JSON.stringify(data),
       };
     } else if (event.httpMethod === "POST") {
       const requestBody = JSON.parse(event.body);

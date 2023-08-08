@@ -33,6 +33,10 @@ p {
   flex: 3 33%;
   margin-bottom: 4%;
 }
+.highScoreTable {
+  text-align: justify;
+  border: 10px solid #f7ea41;
+}
 img {
   width: 86%;
 }
