@@ -26,16 +26,18 @@ p {
   flex-wrap: wrap;
   border: 10px solid #f7ea41;
 }
-.highScore {
-  border: 10px solid #DD403A;
-}
 .mole-container {
   flex: 3 33%;
   margin-bottom: 4%;
 }
+.highScore {
+  border: 10px solid #DD403A;
+  text-align: center;
+}
 .highScoreTable {
-  text-align: justify;
+  text-align: center;
   border: 10px solid #f7ea41;
+  width: 33%;
 }
 img {
   width: 86%;
