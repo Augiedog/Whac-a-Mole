@@ -3,29 +3,33 @@ exports.handler = async function (event, context) {
     statusCode: 200,
     body: JSON.stringify([
       {
-        name: 'FRO',
-        score: '18',
-        date: '11/14/2000'
+        "_id": "64c9df6976e1feb46b8c6f0a",
+        "name": "ACB", "score": "37"
       },
       {
-        name: 'ACB',
-        score: '38',
-        date: '11/14/1985'
+        "_id": "64c9e0d376e1feb46b8c6f0c",
+        "name": "ERA", "score": "49"
       },
       {
-        name: 'OLI',
-        score: '26',
-        date: '03/11/2011'
+        "_id": "64c9e0eb76e1feb46b8c6f0d",
+        "name": "ACB", "score": "14"
       },
       {
-        name: 'KAT',
-        score: '18',
-        date: '10/4/2012'
+        "_id": "64c9e0fd76e1feb46b8c6f0e",
+        "name": "REB", "score": "12"
       },
       {
-        name: 'REB',
-        score: '76',
-        date: '08/09/1972'
+        "_id": "64c9e10b76e1feb46b8c6f0f",
+        "name": "KAT", "score": "56"
+      },
+      {
+        "_id": "64c9e11576e1feb46b8c6f10",
+        "name": "OLI", "score": "32"
+      },
+      {
+        "_id": "64d28655c33cdfbd6ce35e12",
+        "name": "REB", "score": "500",
+        "date": "07/15/2023"
       }
     ])
   }

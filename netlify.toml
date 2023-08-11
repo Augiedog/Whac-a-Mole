@@ -2,7 +2,5 @@
   command = 'npm run build'
   functions = "functions"
   publish = 'build'
-[redirects]
-  from = "https://localhost:3000/.netlify/functions/"
-  to = "https://localhost:8888/.netlify/functions/"
+
  

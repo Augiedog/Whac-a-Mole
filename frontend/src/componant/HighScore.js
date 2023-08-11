@@ -3,20 +3,19 @@ import axios from 'axios'
 
 function HighScore(props) {
     let hsAPI = "/.netlify/functions/example"
-    let [topScore, setTopScore] = useState([{ "_id": "64c9df6976e1feb46b8c6f0a", "name": "ACB", "score": "37" }, { "_id": "64c9e0d376e1feb46b8c6f0c", "name": "ERA", "score": "49" }, { "_id": "64c9e0eb76e1feb46b8c6f0d", "name": "ACB", "score": "14" }, { "_id": "64c9e0fd76e1feb46b8c6f0e", "name": "REB", "score": "12" }, { "_id": "64c9e10b76e1feb46b8c6f0f", "name": "KAT", "score": "56" }, { "_id": "64c9e11576e1feb46b8c6f10", "name": "OLI", "score": "32" }, { "_id": "64d28655c33cdfbd6ce35e12", "name": "REB", "score": "500" }])
+    let [topScore, setTopScore] = useState()
     let [error, setError] = useState(null)
     console.log(topScore, 'var = topScore')
 
     const HighScoreTable = () => {
-        const tableRows = Object.keys(topScore).map(([ name, score ]) => (
-            <tr key={name}>
-                <td>{name}</td>
-                <td>{topScore[name]}</td>
+        const tableRows = topScore.map(item => (
+            <tr key={item._id}>
+                <td>{item.name}</td>
+                <td>{item.score}</td>
             </tr>
-        ))
-console.log(tableRows, 'WTF')
+        ))       
         return (
-                <table className="highScoreTable">
+                <table class="highScoreTable" striped="columns" bordered hover size="sm" >
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -30,15 +29,15 @@ console.log(tableRows, 'WTF')
         )
     }
 
-    // const fetchData = async () => {
-    //     const results = await axios.get("/.netlify/functions/example")
-    //     setTopScore(results.data)  
-    //     console.log(topScore)
-    // }
+    const fetchData = async () => {
+        const results = await axios.get("/.netlify/functions/example")
+        setTopScore(results.data)  
+        console.log(topScore)
+    }
 
-    // useEffect(() => {
-    //     fetchData()
-    // })
+    useEffect(() => {
+        fetchData()
+    })
 
     console.log(error, props, 'here is the error')
     return (
@@ -50,12 +49,5 @@ console.log(tableRows, 'WTF')
         </div>
     )
 }
-
-// db connection
-// const mongoose = require('mongoose')
-// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//     .then(() => console.log('DB connected'))
-//     .catch(err => console.error(err));
-
 
 export default HighScore;
