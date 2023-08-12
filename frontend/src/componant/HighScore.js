@@ -3,43 +3,45 @@ import axios from 'axios'
 
 function HighScore(props) {
     let hsAPI = "/.netlify/functions/example"
-    let [topScore, setTopScore] = useState()
+    let [topScore, setTopScore] = useState([])
     let [error, setError] = useState(null)
     console.log(topScore, 'var = topScore')
 
+    const fetchData = async () => {
+        const results = await axios.get("/.netlify/functions/example")
+        setTopScore(results.data.sort((a, b) => b.score - a.score))
+        console.log(topScore)
+    }
+    useEffect(() => {
+        fetchData()
+    },[])
+
     const HighScoreTable = () => {
-        const tableRows = topScore.map((item, index) => (
+        const tableRows = topScore.map((item, i) => (
             <tr key={item._id}>
-<td>{index + 1}</td>
+                <td>{i + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.score}</td>
             </tr>
-        ))       
+        ))
         return (
-                <table class="highScoreTable" striped="columns" bordered hover size="sm" >
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                         {tableRows}
-                    </tbody>                                     
-                </table>
+            <table class="highScoreTable">
+                <thead>
+                    <tr>
+                        <th>Place</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tableRows}
+                </tbody>
+            </table>
         )
     }
 
-    const fetchData = async () => {
-        const results = await axios.get("/.netlify/functions/example")
-        setTopScore(results.data)  
-        console.log(topScore)
- const sortedData = data.sort((a, b) => b.score - a.score); // Sort data by highest score
-    }
 
-    useEffect(() => {
-        fetchData()
-    })
+
 
     console.log(error, props, 'here is the error')
     return (
