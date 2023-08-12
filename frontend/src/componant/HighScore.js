@@ -8,8 +8,9 @@ function HighScore(props) {
     console.log(topScore, 'var = topScore')
 
     const HighScoreTable = () => {
-        const tableRows = topScore.map(item => (
+        const tableRows = topScore.map((item, index) => (
             <tr key={item._id}>
+<td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.score}</td>
             </tr>
@@ -33,6 +34,7 @@ function HighScore(props) {
         const results = await axios.get("/.netlify/functions/example")
         setTopScore(results.data)  
         console.log(topScore)
+ const sortedData = data.sort((a, b) => b.score - a.score); // Sort data by highest score
     }
 
     useEffect(() => {
