@@ -35,6 +35,9 @@ exports.handler = async (event, context) => {
         if (!req.body.score) {
           req.body.score = 0
         }
+        if (!req.body.timeStamp) {
+          req.body.timeStamp = Date.now()
+        }
         await HighScore.create(req.body)
         
       } catch (error) {

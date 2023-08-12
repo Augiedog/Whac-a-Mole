@@ -5,12 +5,10 @@ function HighScore(props) {
     let hsAPI = "/.netlify/functions/example"
     let [topScore, setTopScore] = useState([])
     let [error, setError] = useState(null)
-    console.log(topScore, 'var = topScore')
 
     const fetchData = async () => {
-        const results = await axios.get("/.netlify/functions/example")
+        const results = await axios.get("/.netlify/functions/highScore")
         setTopScore(results.data.sort((a, b) => b.score - a.score))
-        console.log(topScore)
     }
     useEffect(() => {
         fetchData()
@@ -40,10 +38,7 @@ function HighScore(props) {
         )
     }
 
-
-
-
-    console.log(error, props, 'here is the error')
+    console.log(error, props, topScore, 'here is the error')
     return (
         <div className="highScore">
             <h3>Game Over</h3>
