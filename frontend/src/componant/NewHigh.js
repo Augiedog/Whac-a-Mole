@@ -1,38 +1,39 @@
-import React, { useState } from 'react';
+import React from "react";
+import "./Modal.css";
 
-const Modal = ({ isOpen, onClose }) => {
-  if (!isOpen) {
-    return null; // Don't render anything if the modal is closed
-  }
-
+function NewHigh({ setOpenModal }) {
   return (
-    <div className="modal">
-      <div className="newHighScore">
-        <h2>You Have set the a new High Score</h2>
-        <p>the Score Form to collect the name of player goes here</p>
-        <button onClick={onClose}>Close</button>
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <div className="titleCloseBtn">
+          <button
+            onClick={() => {
+              setOpenModal(false);
+            }}
+          >
+            X
+          </button>
+        </div>
+        <div className="title">
+          <h1>You Set A New High Score</h1>
+        </div>
+        <div className="body">
+          <p>the form to collect players name && attach to score, with button on bottom to submit</p>
+        </div>
+        <div className="footer">
+          <button
+            onClick={() => {
+              setOpenModal(false);
+            }}
+            id="cancelBtn"
+          >
+            Cancel
+          </button>
+          <button>Continue</button>
+        </div>
       </div>
     </div>
   );
-};
-
-const NewHigh = (props) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-console.log(props, 'new high props')
-  return (
-    <div>
-      <button onClick={handleOpenModal}>Open Modal</button>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
-    </div>
-  );
-};
+}
 
 export default NewHigh;

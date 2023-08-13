@@ -5,6 +5,7 @@ import NewHigh from "./NewHigh"
 function HighScore(props) {
     let hsAPI = "/.netlify/functions/example"
     let [topScore, setTopScore] = useState([])
+    const [modalOpen, setModalOpen] = useState(true)
     let [error, setError] = useState(null)
 
     const fetchData = async () => {
@@ -45,7 +46,7 @@ function HighScore(props) {
             <h3>Game Over</h3>
             <p>Your Score: {props.score}</p>
             {HighScoreTable(topScore)}
-            <NewHigh score={props.score} ></NewHigh>
+            {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} />}
 
         </div>
     )
