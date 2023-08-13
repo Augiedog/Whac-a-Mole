@@ -1,5 +1,6 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
 import axios from 'axios'
+import NewHigh from "./NewHigh"
 
 function HighScore(props) {
     let hsAPI = "/.netlify/functions/example"
@@ -44,6 +45,7 @@ function HighScore(props) {
             <h3>Game Over</h3>
             <p>Your Score: {props.score}</p>
             {HighScoreTable(topScore)}
+            <NewHigh score={props.score} ></NewHigh>
 
         </div>
     )
