@@ -2,8 +2,8 @@
 .App {
   width: 100vw;
   height: 100vh;
-border: 10px solid black;
-border-radius: 6px;
+  border: 2px double black;
+  border-radius: 6px;
   text-align: center;
 }
 .scoreBoard {
@@ -13,12 +13,14 @@ border-radius: 6px;
 .playAgainBTN {
   width: 250px;
   height: 60px;
-  border: none;
+  margin: 5px;
+  border: 1px solid;
   border-radius: 6px;
   background-color: #05e76b;
   color: black;
   cursor: pointer;
   font-size: xx-large;
+  text-shadow: 2px 3px 5px #DD403A;
 }
 body {
   padding: 0;
@@ -28,7 +30,7 @@ body {
 h1 {
   font-size: xx-large;
   color: #DD403A;
-box-shadow: 10px 5px 5px purple;
+  text-shadow: 2px 3px 5px #8d018d;
 }
 h3 {
   font-size: large;
@@ -43,17 +45,21 @@ p {
   align-items: center;
   font-size: large;
 }
+
 .hills {
   display: flex;
   flex-wrap: wrap;
   border: 10px solid #f7ea41;
+  border-radius: 6px;
 }
+
 .mole-container {
   flex: 3 33%;
   margin-bottom: 4%;
 }
 .highScore {
   border: 10px solid #DD403A;
+  border-radius: 6px;
   text-align: center;
 }
 .highScoreTable {
@@ -72,6 +78,7 @@ img {
   img {
     width: 34%;
   }
+
   .hills {
     justify-content: space-around;
   }
