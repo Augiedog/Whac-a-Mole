@@ -2,6 +2,8 @@
 .App {
   width: 100vw;
   height: 100vh;
+border: 10px solid black;
+border-radius: 6px;
   text-align: center;
 }
 .scoreBoard {
