@@ -3,9 +3,8 @@ import axios from 'axios'
 import NewHigh from "./NewHigh"
 
 function HighScore(props) {
-    let hsAPI = "/.netlify/functions/example"
     let [topScore, setTopScore] = useState([])
-    const [modalOpen, setModalOpen] = useState(true)
+    let [modalOpen, setModalOpen] = useState(true)
     let [error, setError] = useState(null)
 
     const fetchData = async () => {
@@ -14,7 +13,7 @@ function HighScore(props) {
     }
     useEffect(() => {
         fetchData()
-    },[])
+    }, [])
 
     const HighScoreTable = () => {
         const tableRows = topScore.map((item, i) => (
@@ -25,7 +24,7 @@ function HighScore(props) {
             </tr>
         ))
         return (
-            <table class="highScoreTable">
+            <table className="highScoreTable">
                 <thead>
                     <tr>
                         <th>Place</th>
@@ -43,10 +42,12 @@ function HighScore(props) {
     console.log(error, props, topScore, 'here is the error')
     return (
         <div className="highScore">
+            {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} />}
             <h3>Game Over</h3>
             <p>Your Score: {props.score}</p>
             {HighScoreTable(topScore)}
-            {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} />}
+            <button onClick={() => { setModalOpen(true) }}>Temp Button That Opens Modal</button>
+            
 
         </div>
     )

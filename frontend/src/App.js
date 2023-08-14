@@ -38,7 +38,7 @@ function App() {
       return (
         <>
           <HighScore score={score} />
-          <button onClick={(e) => window.location.reload()} >Play Again??</button>
+          <button className='playAgainBTN' onClick={(e) => window.location.reload()} >Play Again??</button>
         </>
       )
     }

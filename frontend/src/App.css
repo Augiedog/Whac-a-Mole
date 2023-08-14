@@ -2,36 +2,38 @@
 .App {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   text-align: center;
 }
-.App .openModalBtn {
-  width: 200px;
-  height: 40px;
+.scoreBoard {
+  display: flex;
+  justify-content: space-evenly;
+}
+.playAgainBTN {
+  width: 250px;
+  height: 60px;
   border: none;
   border-radius: 6px;
-  background-color: cornflowerblue;
-  color: white;
+  background-color: #05e76b;
+  color: black;
   cursor: pointer;
+  font-size: xx-large;
 }
 body {
   padding: 0;
   background-color: #b5da71;
   margin: 0;
 }
-.h1, .h3 {
+h1 {
   font-size: xx-large;
+  color: #DD403A;
+}
+h3 {
+  font-size: large;
   color: #DD403A;
 }
 p {
   font-size: large;
   color: #DD403A;
-}
-.scoreBoard {
-  display: flex;
-  justify-content: space-evenly;
 }
 .timer {
   display: flex;

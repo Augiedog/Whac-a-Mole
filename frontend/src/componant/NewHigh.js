@@ -1,7 +1,9 @@
 import React from "react";
+import { useEffect } from 'react'
 import "./Modal.css";
 
-function NewHigh({ setOpenModal }) {
+function NewHigh({ setOpenModal, score }) {
+  console.log(score, 'where are you')
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -15,21 +17,13 @@ function NewHigh({ setOpenModal }) {
           </button>
         </div>
         <div className="title">
-          <h1>You Set A New High Score</h1>
+          <h1>"{score}" Is The New High Score</h1>
         </div>
         <div className="body">
           <p>the form to collect players name && attach to score, with button on bottom to submit</p>
         </div>
         <div className="footer">
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            id="cancelBtn"
-          >
-            Cancel
-          </button>
-          <button>Continue</button>
+          <button onClick={() => {setOpenModal(false)}}>Submit</button>
         </div>
       </div>
     </div>
