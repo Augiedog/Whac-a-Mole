@@ -49,7 +49,7 @@ function App() {
 
     return (
       <div className="App">
-        <h1>Whac-a-Mole!</h1>
+        <h1 id='title'>Whac-a-Mole!</h1>
         {scoreBoard()}
         {createMoleHill()}
       </div>

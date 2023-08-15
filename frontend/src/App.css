@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 .App {
-  width: 100vw;
-  height: 100vh;
-  border: 2px double black;
+  margin: 1px;
+  padding: .4em;
+  border: 10px ridge black;
   border-radius: 6px;
   text-align: center;
 }
@@ -30,7 +30,6 @@ body {
 h1 {
   font-size: xx-large;
   color: #DD403A;
-  text-shadow: 2px 3px 5px #8d018d;
 }
 h3 {
   font-size: large;
@@ -39,6 +38,13 @@ h3 {
 p {
   font-size: large;
   color: #DD403A;
+}
+td {
+  color: #DD403A;
+  font-weight: bold;
+}
+#title {
+  text-shadow: 3px 3px 4px #8d018d;
 }
 .timer {
   display: flex;
@@ -60,12 +66,17 @@ p {
 .highScore {
   border: 10px solid #DD403A;
   border-radius: 6px;
-  text-align: center;
+  padding: 5px;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .highScoreTable {
   text-align: center;
   border: 10px solid #f7ea41;
-  width: 33%;
+  border-radius: 6px;
+  width: 44%;
 }
 .newHighScore {
   width: 200px;

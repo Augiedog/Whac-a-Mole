@@ -5,7 +5,6 @@ import NewHigh from "./NewHigh"
 function HighScore(props) {
     let [topScore, setTopScore] = useState([])
     let [modalOpen, setModalOpen] = useState(true)
-    let [error, setError] = useState(null)
 
     const fetchData = async () => {
         const results = await axios.get("/.netlify/functions/highScore")
@@ -24,22 +23,25 @@ function HighScore(props) {
             </tr>
         ))
         return (
-            <table className="highScoreTable">
-                <thead>
-                    <tr>
-                        <th>Place</th>
-                        <th>Name</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tableRows}
-                </tbody>
-            </table>
+            <div className="hstDiv">
+                <table className="highScoreTable">
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableRows}
+                    </tbody>
+                </table>
+            </div>
+
         )
     }
 
-    console.log(error, props, topScore, 'here is the error')
+    console.log(props, topScore, 'here is the error')
     return (
         <div className="highScore">
             {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} />}
@@ -47,7 +49,7 @@ function HighScore(props) {
             <p>Your Score: {props.score}</p>
             {HighScoreTable(topScore)}
             <button onClick={() => { setModalOpen(true) }}>Temp Button That Opens Modal</button>
-            
+
 
         </div>
     )
