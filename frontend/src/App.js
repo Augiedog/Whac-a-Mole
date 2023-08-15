@@ -47,13 +47,13 @@ function App() {
   useEffect(() => {
   }, [score, timer, timeUp])
 
-    return (
-      <div className="App">
-        <h1 id='title'>Whac-a-Mole!</h1>
-        {scoreBoard()}
-        {createMoleHill()}
-      </div>
-    )
+  return (
+    <div className="App">
+      <h1 id='title'>Whac-a-Mole!</h1>
+      {scoreBoard()}
+      {createMoleHill()}
+    </div>
+  )
 }
 
 export default App;

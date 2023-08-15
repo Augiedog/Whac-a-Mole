@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
 .App {
   margin: 1px;
   padding: .4em;
@@ -6,10 +7,12 @@
   border-radius: 6px;
   text-align: center;
 }
+
 .scoreBoard {
   display: flex;
   justify-content: space-evenly;
 }
+
 .playAgainBTN {
   width: 250px;
   height: 60px;
@@ -22,30 +25,37 @@
   font-size: xx-large;
   text-shadow: 2px 3px 5px #DD403A;
 }
+
 body {
   padding: 0;
   background-color: #b5da71;
   margin: 0;
 }
+
 h1 {
   font-size: xx-large;
   color: #DD403A;
 }
+
 h3 {
   font-size: large;
   color: #DD403A;
 }
+
 p {
   font-size: large;
   color: #DD403A;
 }
+
 td {
   color: #DD403A;
   font-weight: bold;
 }
+
 #title {
   text-shadow: 3px 3px 4px #8d018d;
 }
+
 .timer {
   display: flex;
   align-items: center;
@@ -63,6 +73,7 @@ td {
   flex: 3 33%;
   margin-bottom: 4%;
 }
+
 .highScore {
   border: 10px solid #DD403A;
   border-radius: 6px;
@@ -72,15 +83,18 @@ td {
   flex-direction: column;
   justify-content: center;
 }
+
 .highScoreTable {
   text-align: center;
   border: 10px solid #f7ea41;
   border-radius: 6px;
   width: 44%;
 }
+
 .newHighScore {
   width: 200px;
 }
+
 img {
   width: 86%;
 }
