@@ -59,6 +59,7 @@ function NewHigh({ setOpenModal, score }) {
             <input
               value={formData.name}
               name="name"
+maxlength="3"
               onChange={handleChange}
               placeholder="Enter Your Name"
               type="text"
