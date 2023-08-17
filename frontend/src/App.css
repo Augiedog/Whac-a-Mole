@@ -26,6 +26,19 @@
   text-shadow: 2px 3px 5px #DD403A;
 }
 
+#submitBTN {
+  width: 250px;
+  height: 60px;
+  margin: 5px;
+  border: 1px solid;
+  border-radius: 6px;
+  background-color: #0e0af0;
+  color: black;
+  cursor: pointer;
+  font-size: xx-large;
+  text-shadow: 2px 3px 5px #DD403A;
+}
+
 body {
   padding: 0;
   background-color: #b5da71;

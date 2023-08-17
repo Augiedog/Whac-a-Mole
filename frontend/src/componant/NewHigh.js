@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import axios from "axios";
-import { useEffect } from 'react'
 import "./Modal.css";
 
 const TimeStamp = () => {
@@ -12,42 +11,34 @@ const TimeStamp = () => {
 }
 
 function NewHigh({ setOpenModal, score }) {
-  const [name, setName] = useState('')
   const [formData, setFormData] = useState({
-    name: name,
+    name: '',
     score: score,
     timeStamp: TimeStamp()
   })
-  console.log(formData, 'collected data')
-  let [error, setError] = useState(null)
-
-
-
+  
   const handleChange = (e) => {
-    const { name } = e.target;
+    const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: setName,
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/.netlify/functions/highScore', formData);
+      const response = await axios.post('/.netlify/functions/highScore', formData)
       if (response.status === 200) {
-        console.log('Data submitted successfully');
-        // You can perform further actions here, like displaying a success message.
+        console.log('Data submitted successfully')
       } else {
-        console.error('Submission failed');
-        // Handle error cases here, like displaying an error message.
+        console.error('Submission failed')
       }
     } catch (error) {
-      console.error('Error:', error);
-      // Handle network or other errors here.
+      console.error('Error:', error)
     }
   };
-
+  console.log(formData, 'collected data')
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -66,12 +57,13 @@ function NewHigh({ setOpenModal, score }) {
         <div className="body">
           <form onSubmit={handleSubmit}>
             <input
-              value={setName}
+              value={formData.name}
+              name="name"
               onChange={handleChange}
               placeholder="Enter Your Name"
               type="text"
               required></input>
-            <button type="submit">Submit</button>
+            <button type="submit" id="submitBTN">Submit</button>
           </form>
         </div>
         <div className="footer">
