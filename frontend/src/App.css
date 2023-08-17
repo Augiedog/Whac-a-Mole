@@ -27,16 +27,15 @@
 }
 
 #submitBTN {
-  width: 250px;
-  height: 60px;
-  margin: 5px;
-  border: 1px solid;
-  border-radius: 6px;
-  background-color: #0e0af0;
-  color: black;
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1714dc;
+  color: white;
   cursor: pointer;
-  font-size: xx-large;
-  text-shadow: 2px 3px 5px #DD403A;
+  font-size: 20px;
 }
 
 body {

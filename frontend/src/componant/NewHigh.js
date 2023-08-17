@@ -16,7 +16,7 @@ function NewHigh({ setOpenModal, score }) {
     score: score,
     timeStamp: TimeStamp()
   })
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -27,6 +27,7 @@ function NewHigh({ setOpenModal, score }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setOpenModal(false)
     try {
       const response = await axios.post('/.netlify/functions/highScore', formData)
       if (response.status === 200) {
@@ -52,19 +53,20 @@ function NewHigh({ setOpenModal, score }) {
           </button>
         </div>
         <div className="title">
-          <h1>"{score}" Is The New High Score</h1>
+          <h1>You set the new High Score</h1>
         </div>
         <div className="body">
+          <p>Please enter your 3 digt initals</p>
           <form onSubmit={handleSubmit}>
             <input
               value={formData.name}
               name="name"
-maxlength="3"
+              maxlength="3"
               onChange={handleChange}
               placeholder="Enter Your Name"
               type="text"
               required></input>
-            <button type="submit" id="submitBTN">Submit</button>
+            <button type="submit" id="submitBTN" >Submit</button>
           </form>
         </div>
         <div className="footer">
