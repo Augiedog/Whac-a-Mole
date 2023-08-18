@@ -100,7 +100,7 @@ td {
   text-align: center;
   border: 10px solid #f7ea41;
   border-radius: 6px;
-  width: 44%;
+  /* width: 44%; */
 }
 
 .newHighScore {

@@ -23,7 +23,6 @@ function HighScore(props) {
             </tr>
         ))
         return (
-            <div className="hstDiv">
                 <table className="highScoreTable">
                     <thead>
                         <tr>
@@ -36,8 +35,6 @@ function HighScore(props) {
                         {tableRows}
                     </tbody>
                 </table>
-            </div>
-
         )
     }
 

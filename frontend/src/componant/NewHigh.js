@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import axios from "axios";
-import "./Modal.css";
+import axios from "axios"
+import "./Modal.css"
 
 const TimeStamp = () => {
   let newDate = new Date()
@@ -17,8 +17,10 @@ function NewHigh({ setOpenModal, score }) {
     timeStamp: TimeStamp()
   })
 
+  // handle Change needs toUpperCase()
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
+    this.setState({value: name.value.toUpperCase()})
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -61,9 +63,10 @@ function NewHigh({ setOpenModal, score }) {
             <input
               value={formData.name}
               name="name"
-              maxlength="3"
+              maxLength="3"
+              size={3}
               onChange={handleChange}
-              placeholder="Enter Your Name"
+              placeholder="Your Name"
               type="text"
               required></input>
             <button type="submit" id="submitBTN" >Submit</button>
