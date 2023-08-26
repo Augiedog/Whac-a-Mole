@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import axios from 'axios'
 import NewHigh from "./NewHigh"
 
+// function that checks if new high model=true
 function HighScore(props) {
     let [topScore, setTopScore] = useState([])
     let [modalOpen, setModalOpen] = useState(true)
