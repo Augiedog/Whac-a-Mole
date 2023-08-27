@@ -1,7 +1,7 @@
 # Whac-a-Mole
 
-This Web App, was developed as a React-based Whac-a-Mole game, but later wraped the react build with a nodeJS serverless backend that handeles the high score database on MondoDB.
-The game is really Fun to play so there is a deployent. I encurage you to set the high score yourself!
+This Web App, was developed as a React-based Whac-a-Mole game, but later wrapped the react build with a nodeJS serverless backend that handles the high score database on MondoDB.
+The game is really fun to play, so there is a deployment. I encourage you to set the high score yourself!
 <sub>Hosting Provided thru Heroku</sub>
 <p align="center">you can <a href="https://gorgeous-genie-657fdc.netlify.app"><b>Play</b></a> the Game here</p>
 
