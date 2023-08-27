@@ -7,6 +7,7 @@ function HighScore(props) {
     let [topScore, setTopScore] = useState([])
     let [modalOpen, setModalOpen] = useState(true)
 
+// add to fetchData- check 30 days from timeStamp
     const fetchData = async () => {
         const results = await axios.get("/.netlify/functions/highScore")
         setTopScore(results.data.sort((a, b) => b.score - a.score))
@@ -15,6 +16,7 @@ function HighScore(props) {
         fetchData()
     }, [])
 
+// add to HighScore- only show top 10
     const HighScoreTable = () => {
         const tableRows = topScore.map((item, i) => (
             <tr key={item._id}>
