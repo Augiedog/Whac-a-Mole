@@ -9,5 +9,5 @@ Some things I learned while making this:
 - Generate components dynamically.
 - Use state to track the score and mole status.
 - Utilize the useEffect hook to govern the mole (component) lifecycle.
--hosting a backend on netlify
--making a serverless function 
+- hosting a backend on netlify
+- making a serverless function 
