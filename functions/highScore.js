@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
     const collection = db.collection("HIGH_SCORE");
 
     if (event.httpMethod === "GET") {
-      // Perform the MongoDB query here (e.g., find, findOne, etc.)
+      // Perform the MongoDB query here (e.g., find with timeStamp < 30 days)
       const data = await collection.find({}).toArray();
 
       client.close();
@@ -51,7 +51,7 @@ exports.handler = async (event, context) => {
 
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: "Data inserted successfully!" }),
+        body: JSON.stringify({ message: "Record saved successfully!" }),
       };
     } else {
       return {

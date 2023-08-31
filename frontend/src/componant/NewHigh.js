@@ -20,7 +20,7 @@ function NewHigh({ setOpenModal, score }) {
   // handle Change needs toUpperCase()
   const handleChange = (e) => {
     const { name, value } = e.target
-    this.setState({value: name.value.toUpperCase()})
+    // this.setState({value: name.value.toUpperCase()})
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -46,12 +46,13 @@ function NewHigh({ setOpenModal, score }) {
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
+          {/* remove this button */}
           <button
             onClick={() => {
               setOpenModal(false);
             }}
           >
-            X
+            Close
           </button>
         </div>
         <div className="title">
@@ -64,7 +65,7 @@ function NewHigh({ setOpenModal, score }) {
               value={formData.name}
               name="name"
               maxLength="3"
-              size={3}
+              size="3"
               onChange={handleChange}
               placeholder="Your Name"
               type="text"
@@ -73,7 +74,6 @@ function NewHigh({ setOpenModal, score }) {
           </form>
         </div>
         <div className="footer">
-          {/* <button onClick={() => { setOpenModal(false) }}>Submit</button> */}
         </div>
       </div>
     </div>

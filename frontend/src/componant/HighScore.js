@@ -2,12 +2,10 @@ import { useState, useEffect } from "react"
 import axios from 'axios'
 import NewHigh from "./NewHigh"
 
-// function that checks if new high model=true
 function HighScore(props) {
     let [topScore, setTopScore] = useState([])
     let [modalOpen, setModalOpen] = useState(true)
 
-// add to fetchData- check 30 days from timeStamp
     const fetchData = async () => {
         const results = await axios.get("/.netlify/functions/highScore")
         setTopScore(results.data.sort((a, b) => b.score - a.score))
@@ -40,7 +38,9 @@ function HighScore(props) {
                 </table>
         )
     }
-
+// if (topScore.data.score < props.score) {
+//     setModalOpen(true)
+// } 
     console.log(props, topScore, 'here is the error')
     return (
         <div className="highScore">
