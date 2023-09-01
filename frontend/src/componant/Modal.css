@@ -36,8 +36,6 @@
 
 .modalContainer .body {
   flex: 50%;
-  /* display: flex; */
-  /* justify-content: center; */
   align-items: center;
   font-size: 1.7rem;
   text-align: center;

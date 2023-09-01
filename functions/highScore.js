@@ -14,19 +14,7 @@ exports.handler = async (event, context) => {
     const collection = db.collection("HIGH_SCORE");
 
     if (event.httpMethod === "GET") {
-      // Perform the MongoDB query here (e.g., find with timeStamp < 30 days)
-      // const data = await collection.find({}).toArray();
-
-      // Calculate the date for 30 days ago
-      const thirtyDaysAgo = new Date()
-      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
-      
-      console.log("Thirty days ago:", thirtyDaysAgo)
-      
-      // Perform the MongoDB query to get data from the last 30 days
-      const data = await collection.find({
-        // timeStamp: { $gte: thirtyDaysAgo }
-      }).toArray();
+      const data = await collection.find({}).toArray();
 
       client.close();
 
@@ -36,8 +24,6 @@ exports.handler = async (event, context) => {
       };
     } else if (event.httpMethod === "POST") {
       const requestBody = JSON.parse(event.body);
-      // Perform any necessary validation on the requestBody
-      // before inserting it into the database.
       try {
         if (!req.body.name) {
           // Default if one is not provided

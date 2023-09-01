@@ -9,10 +9,8 @@ function NewHigh({ setOpenModal, score }) {
     timeStamp: new Date()
   })
 
-  // handle Change needs toUpperCase()
   const handleChange = (e) => {
     const { name, value } = e.target
-    // this.setState(value.toUpperCase())
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -33,12 +31,11 @@ function NewHigh({ setOpenModal, score }) {
       console.error('Error:', error)
     }
   };
-  console.log(formData, 'collected data')
+ 
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
-          {/* remove this button */}
           <button
             onClick={() => {
               setOpenModal(false);
@@ -48,7 +45,7 @@ function NewHigh({ setOpenModal, score }) {
           </button>
         </div>
         <div className="title">
-          <h1>You set the new High Score</h1>
+          <h1>You set the a new High Score</h1>
         </div>
         <div className="body">
           <p>Please enter your 3 digit initials</p>
@@ -72,4 +69,4 @@ function NewHigh({ setOpenModal, score }) {
   );
 }
 
-export default NewHigh;
+export default NewHigh

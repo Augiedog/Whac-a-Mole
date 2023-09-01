@@ -15,7 +15,6 @@ function HighScore(props) {
         fetchData()
     }, [])
 
-// add to HighScore- only show top 10
     const HighScoreTable = () => {
         const tableRows = topScore
         .slice(0, 10)
@@ -41,7 +40,7 @@ function HighScore(props) {
                 </table>
         )
     } 
-    console.log(props, topScore, 'here is the error')
+
     return (
         <div className="highScore">
             {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} />}
