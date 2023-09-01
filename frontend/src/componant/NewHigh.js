@@ -2,25 +2,17 @@ import React, { useState } from "react"
 import axios from "axios"
 import "./Modal.css"
 
-const TimeStamp = () => {
-  let newDate = new Date()
-  let date = newDate.getDate()
-  let month = newDate.getMonth() + 1
-  let year = newDate.getFullYear()
-  return `${month < 10 ? `0${month}` : `${month}`}${'/'}${date}${'/'}${year}`
-}
-
 function NewHigh({ setOpenModal, score }) {
   const [formData, setFormData] = useState({
     name: '',
     score: score,
-    timeStamp: TimeStamp()
+    timeStamp: new Date()
   })
 
   // handle Change needs toUpperCase()
   const handleChange = (e) => {
     const { name, value } = e.target
-    // this.setState({value: name.value.toUpperCase()})
+    // this.setState(value.toUpperCase())
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -52,7 +44,7 @@ function NewHigh({ setOpenModal, score }) {
               setOpenModal(false);
             }}
           >
-            Close
+            X
           </button>
         </div>
         <div className="title">
