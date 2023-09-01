@@ -20,11 +20,12 @@ exports.handler = async (event, context) => {
       // Calculate the date for 30 days ago
       const thirtyDaysAgo = new Date()
       thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
+      
       console.log("Thirty days ago:", thirtyDaysAgo)
       
       // Perform the MongoDB query to get data from the last 30 days
       const data = await collection.find({
-        timeStamp: { $gte: thirtyDaysAgo }
+        // timeStamp: { $gte: thirtyDaysAgo }
       }).toArray();
 
       client.close();

@@ -1,6 +1,6 @@
 {
-  "name": "react-a-mole",
-  "version": "0.1.0",
+  "name": "Whac-a-mole",
+  "version": "0.2.6",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "Whac-a-mole",
   "version": "1.0.0",
   "description": "Whac-a-mole server",
   "main": "server.js",

@@ -25,7 +25,7 @@ function NewHigh({ setOpenModal, score }) {
     try {
       const response = await axios.post('/.netlify/functions/highScore', formData)
       if (response.status === 200) {
-        console.log('Data submitted successfully')
+        console.log('Record saved successfully')
       } else {
         console.error('Submission failed')
       }
@@ -44,14 +44,14 @@ function NewHigh({ setOpenModal, score }) {
               setOpenModal(false);
             }}
           >
-            X
+            Close
           </button>
         </div>
         <div className="title">
           <h1>You set the new High Score</h1>
         </div>
         <div className="body">
-          <p>Please enter your 3 digt initals</p>
+          <p>Please enter your 3 digit initials</p>
           <form onSubmit={handleSubmit}>
             <input
               value={formData.name}

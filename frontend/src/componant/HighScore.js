@@ -4,8 +4,9 @@ import NewHigh from "./NewHigh"
 
 function HighScore(props) {
     let [topScore, setTopScore] = useState([])
-    let [modalOpen, setModalOpen] = useState(true)
-
+    let high = (props.score > 30) ? true : false
+    let [modalOpen, setModalOpen] = useState(high)
+    
     const fetchData = async () => {
         const results = await axios.get("/.netlify/functions/highScore")
         setTopScore(results.data.sort((a, b) => b.score - a.score))
@@ -16,7 +17,9 @@ function HighScore(props) {
 
 // add to HighScore- only show top 10
     const HighScoreTable = () => {
-        const tableRows = topScore.map((item, i) => (
+        const tableRows = topScore
+        .slice(0, 10)
+        .map((item, i) => (
             <tr key={item._id}>
                 <td>{i + 1}</td>
                 <td>{item.name}</td>
@@ -37,10 +40,7 @@ function HighScore(props) {
                     </tbody>
                 </table>
         )
-    }
-// if (topScore.data.score < props.score) {
-//     setModalOpen(true)
-// } 
+    } 
     console.log(props, topScore, 'here is the error')
     return (
         <div className="highScore">
@@ -48,9 +48,6 @@ function HighScore(props) {
             <h3>Game Over</h3>
             <p>Your Score: {props.score}</p>
             {HighScoreTable(topScore)}
-            <button onClick={() => { setModalOpen(true) }}>Temp Button That Opens Modal</button>
-
-
         </div>
     )
 }
