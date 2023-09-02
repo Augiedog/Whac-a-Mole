@@ -24,15 +24,15 @@ exports.handler = async (event, context) => {
     } else if (event.httpMethod === "POST") {
       const requestBody = JSON.parse(event.body);
       try {
-        if (!req.body.name) {
+        if (!body.name) {
           // Default if one is not provided
-          req.body.name= "ACB"
+          body.name= "ACB"
         }
-        if (!req.body.score) {
-          req.body.score = 0
+        if (!body.score) {
+          body.score = 0
         }
-        if (!req.body.timeStamp) {
-          req.body.timeStamp = new Date()
+        if (!body.timeStamp) {
+          body.timeStamp = new Date()
         }
         await HighScore.create(req.body)
         
