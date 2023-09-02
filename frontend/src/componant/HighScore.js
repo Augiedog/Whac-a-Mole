@@ -4,7 +4,7 @@ import NewHigh from "./NewHigh"
 
 function HighScore(props) {
     let [topScore, setTopScore] = useState([])
-    let high = (props.score > 30) ? true : false
+    let high = (props.score > 40) ? true : false
     let [modalOpen, setModalOpen] = useState(high)
     
     const fetchData = async () => {
