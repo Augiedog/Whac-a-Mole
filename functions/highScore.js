@@ -1,5 +1,4 @@
-const { MongoClient } = require("mongodb");
-// const HighScore = require("../models/highscore")
+const { MongoClient } = require("mongodb")
 
 exports.handler = async (event, context) => {
   try {
@@ -33,7 +32,7 @@ exports.handler = async (event, context) => {
           req.body.score = 0
         }
         if (!req.body.timeStamp) {
-          req.body.timeStamp = Date()
+          req.body.timeStamp = new Date()
         }
         await HighScore.create(req.body)
         
