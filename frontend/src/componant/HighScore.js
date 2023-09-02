@@ -16,7 +16,6 @@ function HighScore(props) {
     }, [])
 
     const HighScoreTable = () => {
-        const uniqueNames = [...new Set(topScore.map(item => item.name))]
         const tableRows = topScore
         .slice(0, 10)
         .map((item, i) => (
