@@ -9,7 +9,9 @@ function App() {
   let [timer, setTimer] = useState(0)
   let [timeUp, setTimeUp] = useState(true)
 
-  const scoreBoard = (timer) => {
+  const scoreBoard = () => {
+setTimer(30)
+setTimeUp(false)
     let timeKeep = []
     timeKeep.push(
       <Timer timer={timer} setTimeUp={setTimeUp} />
@@ -21,8 +23,6 @@ function App() {
       </div>
     )
   }
-
-  
 
   const createMoleHill = () => {
     if (!timeUp) {
@@ -40,7 +40,7 @@ function App() {
       return (
         <>
           <HighScore score={score} />
-          <button className='playAgainBTN' onClick={(e) => setTimer(30) }>Play Again??</button>
+          <button className='playAgainBTN' onClick={(e) => scoreBoard() }>Play Again??</button>
         </>
       )
     }
