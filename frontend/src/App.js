@@ -6,10 +6,10 @@ import './App.css'
 
 function App() {
   let [score, setScore] = useState(0)
-  let [timer] = useState('30')
-  let [timeUp, setTimeUp] = useState(false)
+  let [timer, setTimer] = useState(0)
+  let [timeUp, setTimeUp] = useState(true)
 
-  const scoreBoard = () => {
+  const scoreBoard = (timer) => {
     let timeKeep = []
     timeKeep.push(
       <Timer timer={timer} setTimeUp={setTimeUp} />
@@ -22,6 +22,8 @@ function App() {
     )
   }
 
+  
+
   const createMoleHill = () => {
     if (!timeUp) {
       let hills = []
@@ -30,26 +32,30 @@ function App() {
           <MoleContainer key={i} setScore={setScore} score={score} />
         )
       }
-      return (
-        <div className='hills'>{hills}</div>
+      return (<>
+        {scoreBoard()}
+        <div className='hills'>{hills}</div></>
       )
     } else {
       return (
         <>
           <HighScore score={score} />
-          <button className='playAgainBTN' onClick={(e) => window.location.reload()} >Play Again??</button>
+          <button className='playAgainBTN' onClick={(e) => setTimer(30) }>Play Again??</button>
         </>
       )
     }
   }
 
   useEffect(() => {
+   if (timer) {
+    setTimeUp(false)
+   }
   }, [score, timer, timeUp])
 
+  console.log('timer', timer)
   return (
     <div className="App">
       <h1 id='title'>Whac-a-Mole!</h1>
-      {scoreBoard()}
       {createMoleHill()}
     </div>
   )
