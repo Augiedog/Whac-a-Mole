@@ -23,7 +23,24 @@ exports.handler = async (event, context) => {
       };
     } else if (event.httpMethod === "POST") {
       const requestBody = JSON.parse(event.body);
-    
+      try {
+        if (!body.name) {
+          // Default if one is not provided
+          body.name= "ERROR"
+        }
+        if (!body.score) {
+          body.score = 0
+        }
+        if (!body.timeStamp) {
+          body.timeStamp = new Date()
+        }
+        await HighScore.create(req.body)
+
+      } catch (error) {
+        console.log(error)
+      }
+
+
       // Insert the data into the MongoDB collection.
       const result = await collection.insertOne(requestBody);
 
