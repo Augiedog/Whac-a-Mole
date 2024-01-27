@@ -1,0 +1,8 @@
+GET http://localhost:8888/.netlify/functions/highScore
+###
+POST http://localhost:8888/.netlify/functions/highScore
+
+{
+    "name": "Auguste",
+    "score": 85
+}
