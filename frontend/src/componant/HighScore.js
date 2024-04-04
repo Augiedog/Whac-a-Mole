@@ -17,7 +17,7 @@ function HighScore(props) {
 
     const HighScoreTable = () => {
         const tableRows = topScore
-        .slice(0, 10)
+        .slice(0, 50)
         .map((item, i) => (
             <tr key={item._id}>
                 <td>{i + 1}</td>
@@ -26,7 +26,8 @@ function HighScore(props) {
             </tr>
         ))
         return (
-                <table className="highScoreTable">
+                <div className="highScoreTableDiv">
+                    <table className="highScoreTable">
                     <thead>
                         <tr>
                             <th>Place</th>
@@ -38,6 +39,8 @@ function HighScore(props) {
                         {tableRows}
                     </tbody>
                 </table>
+                </div>
+                
         )
     } 
 
