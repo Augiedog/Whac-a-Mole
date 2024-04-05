@@ -1,0 +1,38 @@
+.highScore {
+    border: 10px solid #DD403A;
+    border-radius: 6px;
+    padding: 5px;
+    margin-bottom: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 27em;
+  }
+  
+  .highScoreTableDiv {
+    overflow: auto;
+    text-align: center;
+    border: 10px solid #f7ea41;
+    border-radius: 6px;
+    display: flex;
+  }
+  
+  .highScoreTable {
+    text-align: center;
+    flex: auto;
+  }
+  
+  td {
+    color: #DD403A;
+    font-weight: bold;
+  }
+  
+  th {
+    border: 1px solid #DD403A;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #afafaf;
+  }

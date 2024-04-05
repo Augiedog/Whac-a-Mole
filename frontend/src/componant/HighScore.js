@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
 import NewHigh from "./NewHigh"
+import './HighScore.css'
 
 function HighScore(props) {
     let [topScore, setTopScore] = useState([])
