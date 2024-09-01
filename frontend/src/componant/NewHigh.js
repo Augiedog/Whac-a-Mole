@@ -2,13 +2,13 @@ import React, { useState } from "react"
 import axios from "axios"
 import "./Modal.css"
 
-function NewHigh({ setOpenModal, score }) {
+function NewHigh({ setOpenModal, score, setLevel, setMulti }) {
   const [formData, setFormData] = useState({
     name: '',
     score: score,
     timeStamp: new Date()
   })
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prevData) => ({

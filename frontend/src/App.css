@@ -13,7 +13,7 @@
   justify-content: space-evenly;
 }
 
-.playAgainBTN {
+#playAgainBTN {
   width: 250px;
   height: 60px;
   margin: 5px;
@@ -58,8 +58,6 @@ p {
   font-size: large;
   color: #DD403A;
 }
-
-
 
 #title {
   text-shadow: 3px 3px 4px #8d018d;
