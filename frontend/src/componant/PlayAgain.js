@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 
 function PlayAgain(props) {
     console.log(props, 'playagain inputs')
-    // let points = [(props.setTimer + 30)(props.setTimeUp = false)(props.setMulti = props.multi + 1)]
-    // let moles = [(props.setTimer + 30)(props.setTimeUp = false)(props.setLevel= props.level + 1)]
+    // let [play, setPlay] = useEffect()
+    // const points = [ props.setTimer(+30) props.setTimeUp(false) props.setMulti(props.multi + 1) ]
+    // const moles = [props.setTimer(+30) props.setTimeUp(false) props.setLevel(props.level + 1) ]
     return (
       <>
         <button id='playAgainBTN' onClick={(e) => window.location.reload()} >Play Again??</button>
