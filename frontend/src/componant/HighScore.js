@@ -31,7 +31,7 @@ function HighScore(props) {
                     <table className="highScoreTable">
                     <thead>
                         <tr>
-                            <th>Place</th>
+                            <th>Rank</th>
                             <th>Name</th>
                             <th>Score</th>
                         </tr>
