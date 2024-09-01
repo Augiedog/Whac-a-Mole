@@ -9,8 +9,8 @@ function App() {
   let [score, setScore] = useState(0)
   let [timer, setTimer] = useState('30')
   let [timeUp, setTimeUp] = useState(false)
-  let [level, setLevel] = useState(1)
-  let [multi, setMulti] = useState(2)
+  let [level, setLevel] = useState(7)
+  let [multi, setMulti] = useState(3)
 
   const scoreBoard = () => {
     let timeKeep = []
@@ -47,9 +47,9 @@ function App() {
     }
   }
 
-  console.log(level, multi, 'Here you go')
+  console.log(level, multi, timeUp, timer, 'Here you go')
   useEffect(() => {
-  }, [score, timer, timeUp])
+  }, [score, timer, timeUp, setTimeUp])
 
   return (
     <div className="App">
