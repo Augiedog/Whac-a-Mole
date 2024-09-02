@@ -4,6 +4,7 @@ function PlayAgain(props) {
     console.log(props, 'playagain inputs')
     const playAgain = () => {
       props.setTimeUp(false)
+      props.setScore(0)
       // window.location.reload()
     }
     const points = () => {

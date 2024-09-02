@@ -7,10 +7,10 @@ import './App.css'
 
 function App() {
   let [score, setScore] = useState(0)
-  let [timer, setTimer] = useState('30')
-  let [timeUp, setTimeUp] = useState(false)
-  let [level, setLevel] = useState(7)
-  let [multi, setMulti] = useState(3)
+  let [timer, setTimer] = useState(30)
+  let [timeUp, setTimeUp] = useState(true)
+  let [level, setLevel] = useState(1)
+  let [multi, setMulti] = useState(1)
 
   const scoreBoard = () => {
     let timeKeep = []
@@ -41,7 +41,7 @@ function App() {
       return (
         <>
           <HighScore score={score} />
-          <PlayAgain setLevel={setLevel} level={level} setMulti={setMulti} multi={multi} setTimer={setTimer} setTimeUp={setTimeUp} />
+          <PlayAgain setLevel={setLevel} level={level} setScore={setScore} setMulti={setMulti} multi={multi} setTimer={setTimer} setTimeUp={setTimeUp} />
         </>
       )
     }
