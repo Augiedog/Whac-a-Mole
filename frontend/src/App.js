@@ -11,6 +11,7 @@ function App() {
   let [timeUp, setTimeUp] = useState(true)
   let [level, setLevel] = useState(1)
   let [multi, setMulti] = useState(1)
+  let [gameCount, setCount] = useState(0)
 
   const scoreBoard = () => {
     let timeKeep = []
@@ -37,25 +38,45 @@ function App() {
       return (
         <div className='hills'>{hills}</div>
       )
-    } else {
+    }
+  }
+
+  const newGame = () => {
+    if (timeUp) {
       return (
         <>
           <HighScore score={score} />
-          <PlayAgain setLevel={setLevel} level={level} setScore={setScore} setMulti={setMulti} multi={multi} setTimer={setTimer} setTimeUp={setTimeUp} />
+          <PlayAgain
+            setLevel={setLevel}
+            level={level}
+            score={score}
+            setScore={setScore}
+            setMulti={setMulti}
+            multi={multi}
+            setTimer={setTimer}
+            setTimeUp={setTimeUp}
+            gameCount={gameCount}
+            setCount={setCount}
+          />
         </>
       )
     }
+    return (
+      <>
+        {scoreBoard()}
+        {createMoleHill()}
+      </>
+    )
   }
 
   console.log(level, multi, timeUp, timer, 'Here you go')
   useEffect(() => {
-  }, [score, timer, timeUp, setTimeUp])
+  }, [score, timer, timeUp])
 
   return (
     <div className="App">
       <h1 id='title'>Whac-a-Mole!</h1>
-      {scoreBoard()}
-      {createMoleHill()}
+      {newGame()}
     </div>
   )
 }
