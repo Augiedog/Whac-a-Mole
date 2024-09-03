@@ -12,19 +12,15 @@ function PlayAgain(props) {
   const playAgain = () => {
     props.setTimer(30)
     props.setTimeUp(false)
-    // props.setScore(0)
-    // props.setLevel(1)
-    // props.setMulti(1)
+    props.setCount(props.gameCount+1)
   }
   const points = () => {
-    props.setTimer(30)
-    props.setTimeUp(false)
+    playAgain()
     props.setScore(0)
     props.setMulti(props.multi + 1)
   }
   const moles = () => {
-    props.setTimer(30)
-    props.setTimeUp(false)
+    playAgain()
     props.setScore(0)
     props.setLevel(props.level + 3)
   }
