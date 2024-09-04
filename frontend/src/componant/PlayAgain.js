@@ -31,6 +31,7 @@ function PlayAgain(props) {
     props.setMulti(156)
     props.setLevel(7)
   }
+   
   return (
     <>
       <button id='playAgainBTN' onClick={(e) => points()} >Extra Points?</button>

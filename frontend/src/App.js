@@ -10,6 +10,7 @@ function App() {
   let [timer, setTimer] = useState(30)
   let [timeUp, setTimeUp] = useState(true)
   let [level, setLevel] = useState(1)
+  let [streak, setStreak] = useState(0)
   let [multi, setMulti] = useState(1)
   let [gameCount, setCount] = useState(0)
 
@@ -32,7 +33,7 @@ function App() {
       let hills = []
       for (let i = 0; i < 8 + level; i++) {
         hills.push(
-          <MoleContainer key={i} setScore={setScore} score={score} multi={multi} />
+          <MoleContainer key={i} setScore={setScore} score={score} streak={streak} setStreak={setStreak} multi={multi} />
         )
       }
       return (
@@ -69,7 +70,7 @@ function App() {
     )
   }
 
-  console.log(level, multi, timeUp, timer, 'Here you go')
+  console.log(level, multi, timeUp, timer, streak, 'Here you go')
   useEffect(() => {
   }, [score, timer, timeUp])
 
