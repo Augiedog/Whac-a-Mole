@@ -6,6 +6,7 @@ function PlayAgain(props) {
     props.setTimer(30)
     props.setTimeUp(false)
     props.setScore(0)
+    props.setStreak(0)
     props.setLevel(1)
     props.setMulti(1)
   }
@@ -25,7 +26,7 @@ function PlayAgain(props) {
     props.setLevel(props.level + 3)
   }
   const cheater = () => {
-    props.setTimer(40)
+    props.setTimer(50)
     props.setTimeUp(false)
     props.setScore(369)
     props.setMulti(156)
@@ -34,10 +35,10 @@ function PlayAgain(props) {
    
   return (
     <>
-      <button id='playAgainBTN' onClick={(e) => points()} >Extra Points?</button>
-      <button id='playAgainBTN' onClick={(e) => play()} >Play?</button>
+      {/* <button id='playAgainBTN' onClick={(e) => points()} >Extra Points?</button> */}
+      <button id='playAgainBTN' onClick={(e) => play()} >New Game</button>
       <button id='playAgainBTN' onClick={(e) => playAgain()} >Play Again?</button>
-      <button id='playAgainBTN' onClick={(e) => moles()} > Extra Moles?</button>
+      {/* <button id='playAgainBTN' onClick={(e) => moles()} > Extra Moles?</button> */}
       <button id='playAgainBTN' onClick={(e) => cheater()} > Cheats</button>
     </>
   )

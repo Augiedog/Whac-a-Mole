@@ -45,7 +45,7 @@ function NewHigh({ setOpenModal, score, setLevel, setMulti }) {
           </button>
         </div>
         <div className="title">
-          <h1>You set the a new High Score</h1>
+          <h1>You set a new High Score</h1>
         </div>
         <div className="body">
           <p>Please enter your 3 digit initials</p>
@@ -54,7 +54,7 @@ function NewHigh({ setOpenModal, score, setLevel, setMulti }) {
               value={formData.name}
               name="name"
               maxLength="3"
-              size="3"
+              size="7"
               onChange={handleChange}
               placeholder="Your Name"
               type="text"
