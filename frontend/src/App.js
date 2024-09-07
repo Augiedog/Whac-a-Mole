@@ -19,11 +19,27 @@ function App() {
     timeKeep.push(
       <Timer timer={timer} setTimeUp={setTimeUp} />
     )
+    let showMulti = () => {
+      if (multi > 1) {
+        return (
+          <p>x{multi}</p>
+        )
+      }
+    }
+
+    let showLevel = () => {
+      if (level > 1) {
+        return (
+          <p>extra moles {level-1}</p>
+        )
+      }
+    }
+
     return (
       <div className='scoreBoard'>
-        <h3>Score: {score}</h3>
+        <h3>Score: {score}</h3>{showMulti()}
+        {showLevel()}
         <h3>Time: {timeKeep}</h3>
-        <h3>Level: {level}</h3>
       </div>
     )
   }
@@ -37,9 +53,11 @@ function App() {
             score={score}
             setScore={setScore}
             streak={streak}
+            setLevel={setLevel}
             setStreak={setStreak}
             multi={multi}
             setMulti={setMulti}
+            setTimer={setTimer}
           />
         )
       }

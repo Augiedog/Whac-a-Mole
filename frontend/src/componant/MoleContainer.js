@@ -24,10 +24,14 @@ function MoleContainer(props) {
     console.log(props, 'at Mole container')
     
     useEffect(() => {
-        if (locStreak > 4 && locStreak < 15) {
+        if (props.streak > 10 && props.streak < 21) {
             props.setMulti(5)
-        } else {
-            props.setMulti(1)
+        } 
+        if (props.streak > 13 && props.streak < 33) {
+            props.setLevel(4)
+        }
+        if (props.streak > 15 && props.streak < 35) {
+            props.setLevel(7)
         }
     }, [daMole, locStreak])
 
