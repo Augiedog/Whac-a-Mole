@@ -3,7 +3,6 @@ import axios from "axios"
 import "./Modal.css"
 
 function NewHigh({ setOpenModal, score, gameCount }) {
-  console.log(score, gameCount, 'gameCount inside before formData')
   const [formData, setFormData] = useState({
     name: '',
     score: score,
@@ -33,7 +32,7 @@ function NewHigh({ setOpenModal, score, gameCount }) {
       console.error('Error:', error)
     }
   };
- console.log(formData, 'formDataToServer')
+
   return (
     <div className="modalBackground">
       <div className="modalContainer">

@@ -20,19 +20,11 @@ function App() {
       <Timer timer={timer} setTimeUp={setTimeUp} />
     )
     let showMulti = () => {
-      if (multi > 1) {
-        return (
-          <p>x{multi}</p>
-        )
-      }
+      if (multi > 1) { return (<p>x{multi}</p>) }
     }
 
     let showLevel = () => {
-      if (moles > 0) {
-        return (
-          <p>extra moles {moles}</p>
-        )
-      }
+      if (moles > 0) { return (<p>extra moles {moles}</p>) }
     }
 
     return (
