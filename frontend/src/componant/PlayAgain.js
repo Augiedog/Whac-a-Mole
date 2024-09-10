@@ -41,6 +41,8 @@ function PlayAgain(props) {
   //   props.setLevel(8)
   // }
 console.log(props, "props")
+  useEffect(() => {
+  }, [props])
   return (
     <>
       {/* <button id='playAgainBTN' onClick={(e) => points()} >Extra Points?</button> */}
