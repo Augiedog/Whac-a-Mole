@@ -6,7 +6,7 @@ function PlayAgain(props) {
     props.setTimeUp(false)
     props.setScore(0)
     props.setStreak(0)
-    props.setMoles(1)
+    props.setMoles(0)
     props.setMulti(1)
     props.setCount(props.gameCount +1)
   }
