@@ -4,8 +4,6 @@ import NoMole from './EmptySlot'
 
 
 function MoleContainer(props) {
-    let locStreak = props.streak
-
     let [daMole, setdaMole] = useState(false)
     // A handleClick function that will increment the score by 1 and immediately set the clicked-on mole to no longer display (we will pass this down only to Mole components)
     const handleClick = (e) => {
@@ -21,19 +19,18 @@ function MoleContainer(props) {
     }
     // A ternary that will determine which child to render
     const display = daMole ? <Mole toggle={setdaMole} handleClick={handleClick} /> : <NoMole toggle={setdaMole} handleClick={handleBadClick} />
-    console.log(props, 'at Mole container')
     
     useEffect(() => {
         if (props.streak > 10 && props.streak < 21) {
             props.setMulti(5)
         } 
         if (props.streak > 13 && props.streak < 33) {
-            props.setLevel(4)
+            props.setMoles(3)
         }
         if (props.streak > 15 && props.streak < 35) {
-            props.setLevel(7)
+            props.setMoles(6)
         }
-    }, [daMole, locStreak])
+    }, [daMole, props])
 
     return (
         <div className='mole-container'>

@@ -47,7 +47,7 @@ function HighScore(props) {
 
     return (
         <div className="highScore">
-            {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} />}
+            {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} gameCount={props.gameCount} />}
             <h3>Game Over</h3>
             <p>Your Score: {props.score}</p>
             {HighScoreTable(topScore)}

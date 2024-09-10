@@ -1,7 +1,6 @@
 // import { useState, useEffect } from 'react'
 
 function PlayAgain(props) {
-  console.log(props, 'playagain inputs')
   const play = () => {
     props.setTimer(30)
     props.setTimeUp(false)
@@ -16,31 +15,31 @@ function PlayAgain(props) {
     props.setCount(props.gameCount + 1)
   }
 
-  // const points = () => {
-  //   playAgain()
-  //   props.setScore(0)
-  //   props.setMulti(props.multi + 1)
-  // }
-  // const moles = () => {
-  //   playAgain()
-  //   props.setScore(0)
-  //   props.setLevel(props.level + 3)
-  // }
-  // const cheater = () => {
-  //   props.setTimer(50)
-  //   props.setTimeUp(false)
-  //   props.setScore(369)
-  //   props.setMulti(156)
-  //   props.setLevel(7)
-  // }
+  const points = () => {
+    playAgain()
+    props.setScore(0)
+    props.setMulti(props.multi + 1)
+  }
+  const moles = () => {
+    playAgain()
+    props.setScore(0)
+    props.setLevel(props.level + 3)
+  }
+  const cheater = () => {
+    props.setTimer(50)
+    props.setTimeUp(false)
+    props.setScore(369)
+    props.setMulti(156)
+    props.setLevel(8)
+  }
 
   return (
     <>
-      {/* <button id='playAgainBTN' onClick={(e) => points()} >Extra Points?</button> */}
+      <button id='playAgainBTN' onClick={(e) => points()} >Extra Points?</button>
       <button id='playAgainBTN' onClick={(e) => play()} >New Game</button>
       <button id='playAgainBTN' onClick={(e) => playAgain()} >Play Again?</button>
-      {/* <button id='playAgainBTN' onClick={(e) => moles()} > Extra Moles?</button> */}
-      {/* <button id='playAgainBTN' onClick={(e) => cheater()} > Cheats</button> */}
+      <button id='playAgainBTN' onClick={(e) => moles()} > Extra Moles?</button>
+      <button id='playAgainBTN' onClick={(e) => cheater()} > Cheats</button>
     </>
   )
 }

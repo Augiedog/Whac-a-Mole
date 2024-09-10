@@ -9,7 +9,7 @@ function App() {
   let [score, setScore] = useState(0)
   let [timer, setTimer] = useState(30)
   let [timeUp, setTimeUp] = useState(true)
-  let [level, setLevel] = useState(1)
+  let [moles, setMoles] = useState(0)
   let [streak, setStreak] = useState(0)
   let [multi, setMulti] = useState(1)
   let [gameCount, setCount] = useState(0)
@@ -28,9 +28,9 @@ function App() {
     }
 
     let showLevel = () => {
-      if (level > 1) {
+      if (moles > 0) {
         return (
-          <p>extra moles {level-1}</p>
+          <p>extra moles {moles}</p>
         )
       }
     }
@@ -47,13 +47,13 @@ function App() {
   const createMoleHill = () => {
     if (!timeUp) {
       let hills = []
-      for (let i = 0; i < 8 + level; i++) {
+      for (let i = 0; i < 9 + moles; i++) {
         hills.push(
           <MoleContainer key={i}
             score={score}
             setScore={setScore}
             streak={streak}
-            setLevel={setLevel}
+            setMoles={setMoles}
             setStreak={setStreak}
             multi={multi}
             setMulti={setMulti}
@@ -71,10 +71,10 @@ function App() {
     if (timeUp) {
       return (
         <>
-          <HighScore score={score} />
+          <HighScore score={score} gameCount={gameCount} />
           <PlayAgain
-            setLevel={setLevel}
-            level={level}
+            setMoles={setMoles}
+            moles={moles}
             score={score}
             setScore={setScore}
             multi={multi}
@@ -96,7 +96,7 @@ function App() {
     )
   }
 
-  console.log(level, multi, timeUp, timer, 'Here you go')
+  console.log( gameCount, 'gameCount')
   useEffect(() => {
   }, [score, timer, timeUp])
 
