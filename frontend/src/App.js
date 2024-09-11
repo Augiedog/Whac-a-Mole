@@ -88,7 +88,6 @@ function App() {
     )
   }
 
-  console.log( gameCount, 'gameCount')
   useEffect(() => {
   }, [score, timer, timeUp])
 
