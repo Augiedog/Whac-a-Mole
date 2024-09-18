@@ -49,6 +49,7 @@ function NewHigh({ setOpenModal, score, gameCount }) {
           <h1>You set a new High Score</h1>
         </div>
         <div className="body">
+<h1>Your score: {score}</h1>
           <p>Please enter your 3 digit initials</p>
           <form onSubmit={handleSubmit}>
             <input
