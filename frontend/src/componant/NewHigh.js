@@ -40,7 +40,7 @@ function NewHigh({ setOpenModal, score, gameCount }) {
           <button onClick={() => {setOpenModal(false)}} >Close</button>
         </div>
         <div className="title">
-          <h1>🎉<strong>Your Score: {score}</strong>🎉</h1>
+          <p>🎉<strong>Your Score: {score}</strong>🎉</p>
           <h1>You set a new High Record</h1>
         </div>
         <div className="body">
