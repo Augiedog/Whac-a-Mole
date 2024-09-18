@@ -5,7 +5,7 @@ import './HighScore.css'
 
 function HighScore(props) {
     let [topScore, setTopScore] = useState([])
-    let high = (props.score > 40) ? true : false
+    let high = (props.score > 45) ? true : false
     let [modalOpen, setModalOpen] = useState(high)
     
     const fetchData = async () => {

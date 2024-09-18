@@ -9,7 +9,7 @@ function NewHigh({ setOpenModal, score, gameCount }) {
     gameCount: gameCount,
     timeStamp: new Date()
   })
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prevData) => ({
@@ -37,19 +37,14 @@ function NewHigh({ setOpenModal, score, gameCount }) {
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-          >
-            Close
-          </button>
+          <button onClick={() => {setOpenModal(false)}} >Close</button>
         </div>
         <div className="title">
-          <h1>You set a new High Score</h1>
+          <h1>🎉<strong>Your Score: {score}</strong>🎉</h1>
+          <h1>You set a new High Record</h1>
         </div>
         <div className="body">
-<h1>Your score: {score}</h1>
+          
           <p>Please enter your 3 digit initials</p>
           <form onSubmit={handleSubmit}>
             <input
