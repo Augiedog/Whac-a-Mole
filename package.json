@@ -9,7 +9,8 @@
     "del": "rm -r build",
     "build": "node server.js",
     "draft": "npm --prefix frontend run start",
-    "write": "npm --prefix frontend run build"
+    "write": "npm --prefix frontend run build",
+    "deploy": "netlify deploy"
   },
   "author": "",
   "license": "ISC",
