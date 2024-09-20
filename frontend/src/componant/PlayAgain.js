@@ -17,7 +17,7 @@ function PlayAgain(props) {
     props.setCount(props.gameCount + 1)
   }
   const displayAgainBTN = () => {
-    if (props.gameCount > 75 && props.gameCount < 77) {
+    if (props.streak > 75) {
       return (<button id='playAgainBTN' onClick={(e) => playAgain()} >Bonus Play</button>)
     }
   }
