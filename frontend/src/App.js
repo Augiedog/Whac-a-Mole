@@ -71,6 +71,7 @@ function App() {
             setScore={setScore}
             multi={multi}
             setMulti={setMulti}
+streak={streak}
             setStreak={setStreak}
             setTimer={setTimer}
             setTimeUp={setTimeUp}
