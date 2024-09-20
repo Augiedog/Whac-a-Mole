@@ -20,17 +20,20 @@ function App() {
       <Timer timer={timer} setTimeUp={setTimeUp} />
     )
     let showMulti = () => {
-      if (multi > 1) { return (<p>x{multi}</p>) }
+      if (multi > 1) { return (<>x{multi}</>) }
     }
-
-    let showLevel = () => {
-      if (moles > 0) { return (<p>extra moles {moles}</p>) }
+    let showMoles = () => {
+      if (moles > 0) { return (<>+Moles {moles}</>) }
     }
-
+    let showStreak = () => {
+      if (streak > 9) { return (<>Streak:{streak}</>) }
+    }
     return (
       <div className='scoreBoard'>
-        <h3>Score: {score}</h3>{showMulti()}
-        {showLevel()}
+        <h3>Score: {score}</h3>
+        <p>{showMulti()}</p>
+        <p>{showMoles()}</p>
+        <p>{showStreak()}</p>
         <h3>Time: {timeKeep}</h3>
       </div>
     )
@@ -71,7 +74,7 @@ function App() {
             setScore={setScore}
             multi={multi}
             setMulti={setMulti}
-streak={streak}
+            streak={streak}
             setStreak={setStreak}
             setTimer={setTimer}
             setTimeUp={setTimeUp}
@@ -94,7 +97,7 @@ streak={streak}
 
   return (
     <div className="App">
-      <h1 id='title'>Whac-a-Mole!</h1>
+      <h1 id='title'>Whac-A-Mole!</h1>
       {newGame()}
     </div>
   )
