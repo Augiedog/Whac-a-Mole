@@ -23,7 +23,7 @@ function App() {
       if (multi > 1) { return (<>x{multi}</>) }
     }
     let showMoles = () => {
-      if (moles > 0) { return (<>+Moles {moles}</>) }
+      if (moles > 0) { return (<>+{moles} Moles</>) }
     }
     let showStreak = () => {
       if (streak > 9) { return (<>Streak:{streak}</>) }
