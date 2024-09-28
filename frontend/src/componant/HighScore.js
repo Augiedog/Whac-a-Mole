@@ -44,7 +44,7 @@ function HighScore(props) {
                 
         )
     } 
-
+// would like to add tereny to display welcome : game over 
     return (
         <div className="highScore">
             {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} gameCount={props.gameCount} />}
