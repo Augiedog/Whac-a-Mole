@@ -16,6 +16,8 @@ function HighScore(props) {
         fetchData()
     }, [])
 
+// const welcomeOver = () => {}
+
     const HighScoreTable = () => {
         const tableRows = topScore
         .slice(0, 50)
