@@ -7,7 +7,6 @@ function HighScore(props) {
     let [topScore, setTopScore] = useState([])
     let high = (props.score > 45) ? true : false
     let [modalOpen, setModalOpen] = useState(high)
-    let [new, setNew] = useState(false)
 
     const fetchData = async () => {
         const results = await axios.get("/.netlify/functions/highScore")
@@ -18,12 +17,19 @@ function HighScore(props) {
     }, [])
 
     const gameOver = () => {
-         <h3>Game Over</h3> 
-            <p>Your Score: {props.score}</p>
+        if (props.gameCount > 0) {
+            return (
+                <>
+                    <h3>Game Over</h3>
+                    <p>Your Score: {props.score}</p>
+                </>
+            )
+        } else {
+            return (
+                <h3>Welcome</h3>
+            )
+        }
     }
-    const welcome = () => {
-        <h3>Welcome</h3>
-    } 
 
     const HighScoreTable = () => {
         const tableRows = topScore
@@ -53,13 +59,11 @@ function HighScore(props) {
 
         )
     }
-    // would like to add tereny to display welcome : gameOver 
-    console.log(props, "props at high score")
 
     return (
         <div className="highScore">
             {modalOpen && <NewHigh setOpenModal={setModalOpen} score={props.score} gameCount={props.gameCount} />}
-
+            {gameOver()}
             {HighScoreTable(topScore)}
         </div>
     )
